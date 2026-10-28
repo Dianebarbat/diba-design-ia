@@ -1,0 +1,1405 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Diane Barbat, service designer et UX/UI designer spécialisée en IA. Agents IA sur mesure pour rendre du temps à votre équipe. Diagnostic gratuit en 8 minutes.">
+<meta property="og:title" content="Diba.design.ia">
+<meta property="og:description" content="Des agents IA sur mesure pour rendre du temps à votre équipe. Diagnostic gratuit en 8 minutes.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#050A16">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230066E0'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EDB%3C/text%3E%3C/svg%3E">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Diba.design.ia</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout : vitrine à la manière d'une page produit — bandes pleine largeur alternées, colonne centrale 1080px, tuiles en grille "bento", un seul bleu pour l'action. */
+:root{
+  --bg:#FFFFFF;
+  --bg-alt:#F4F6FA;
+  --card:#FFFFFF;
+  --card-alt:#F4F6FA;
+  --fg:#14171F;
+  --fg-2:#565D6B;
+  --fg-3:#8B92A0;
+  --line:#E2E6EE;
+  --line-strong:#CBD2DE;
+  --blue:#0066E0;
+  --blue-hover:#0A74F5;
+  --blue-ink:#FFFFFF;
+  --blue-soft:#E8F1FE;
+  --blue-text:#0058C2;
+  --gain:#1B7F55;
+  --warn:#A2561B;
+  --warn-soft:#FBF0E6;
+  --nav-bg:rgba(255,255,255,.78);
+  /* bandeau sombre, identique dans les deux thèmes */
+  --hero-bg:#050A16;
+  --hero-bg-2:#0B1A36;
+  --hero-fg:#F5F7FB;
+  --hero-fg-2:#A3AEC2;
+  --hero-line:rgba(255,255,255,.12);
+  --hero-glow:rgba(30,110,255,.55);
+  --hero-accent:#5CA8FF;
+  --hero-card:rgba(255,255,255,.06);
+
+  --f-display:-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
+  --f-text:-apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", system-ui, sans-serif;
+  --r-l:28px;
+  --r-m:18px;
+  --r-s:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#05070C;
+    --bg-alt:#0D1118;
+    --card:#121821;
+    --card-alt:#0D1118;
+    --fg:#F2F4F8;
+    --fg-2:#A7AFBE;
+    --fg-3:#737C8C;
+    --line:#1F2633;
+    --line-strong:#2E3746;
+    --blue:#2E86FF;
+    --blue-hover:#4C97FF;
+    --blue-ink:#FFFFFF;
+    --blue-soft:#0F2241;
+    --blue-text:#69AAFF;
+    --gain:#4CC28C;
+    --warn:#E0965A;
+    --warn-soft:#2A1D13;
+    --nav-bg:rgba(5,7,12,.74);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#05070C;
+  --bg-alt:#0D1118;
+  --card:#121821;
+  --card-alt:#0D1118;
+  --fg:#F2F4F8;
+  --fg-2:#A7AFBE;
+  --fg-3:#737C8C;
+  --line:#1F2633;
+  --line-strong:#2E3746;
+  --blue:#2E86FF;
+  --blue-hover:#4C97FF;
+  --blue-ink:#FFFFFF;
+  --blue-soft:#0F2241;
+  --blue-text:#69AAFF;
+  --gain:#4CC28C;
+  --warn:#E0965A;
+  --warn-soft:#2A1D13;
+  --nav-bg:rgba(5,7,12,.74);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:var(--f-text); font-size:17px; line-height:1.5; letter-spacing:-.012em;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:60; background:var(--nav-bg)}
+h1,h2,h3,h4{font-family:var(--f-display); margin:0; text-wrap:balance; letter-spacing:-.028em; line-height:1.06; font-weight:700}
+p{margin:0}
+a{color:var(--blue-text)}
+button,input,select,textarea{font:inherit; color:inherit; letter-spacing:inherit}
+:focus-visible{outline:2px solid var(--blue); outline-offset:3px; border-radius:8px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important; transition:none!important}}
+
+.wrap{max-width:1080px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+@media (min-width:700px){.wrap{padding-left:max(28px, env(safe-area-inset-left,0px)); padding-right:max(28px, env(safe-area-inset-right,0px))}}
+.band{padding-block:104px}
+.band.alt{background:var(--bg-alt)}
+@media (max-width:700px){.band{padding-block:72px}}
+
+/* ---------- navigation ---------- */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:var(--nav-bg);
+  backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--line)}
+.nav-in{display:flex; align-items:center; gap:28px; height:52px}
+.logo{font-family:var(--f-display); font-weight:700; font-size:19px; letter-spacing:-.03em; color:var(--fg); text-decoration:none; margin-right:auto; white-space:nowrap}
+.logo span{color:var(--blue-text); font-weight:600}
+.nav-links{display:flex; gap:26px}
+.nav-links a{color:var(--fg-2); text-decoration:none; font-size:14px}
+.nav-links a:hover{color:var(--fg)}
+@media (max-width:820px){.nav-links{display:none}}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:980px; border:1px solid transparent;
+  padding:11px 22px; font-size:16px; font-weight:500; cursor:pointer; text-decoration:none; white-space:nowrap;
+  transition:background-color .2s, color .2s, border-color .2s, transform .1s}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--blue); color:var(--blue-ink)}
+.btn-primary:hover{background:var(--blue-hover)}
+.btn-quiet{background:transparent; color:var(--blue-text); border-color:var(--line-strong)}
+.btn-quiet:hover{border-color:var(--blue-text)}
+.btn-sm{padding:6px 15px; font-size:14px}
+.btn-lg{padding:15px 28px; font-size:17px}
+.btn[disabled]{opacity:.4; cursor:not-allowed}
+.link-more{color:var(--blue-text); text-decoration:none; font-size:17px; font-weight:500}
+.link-more:hover{text-decoration:underline}
+.link-more::after{content:" ›"}
+
+/* ---------- hero ---------- */
+.hero{position:relative; overflow:hidden; background:var(--hero-bg); color:var(--hero-fg); padding-block:96px 88px}
+.hero::before{content:""; position:absolute; width:900px; height:900px; left:50%; top:-420px; transform:translateX(-10%);
+  background:radial-gradient(closest-side, var(--hero-glow), transparent 70%); pointer-events:none; opacity:.85}
+.hero::after{content:""; position:absolute; inset:auto 0 0; height:220px; background:linear-gradient(to bottom, transparent, var(--hero-bg-2)); opacity:.5; pointer-events:none}
+.hero-grid{position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:56px; align-items:center}
+@media (max-width:920px){.hero-grid{grid-template-columns:1fr; gap:44px}.hero{padding-block:72px 64px}}
+.kicker{font-size:15px; font-weight:600; color:var(--hero-accent); letter-spacing:-.005em}
+.hero h1{font-size:clamp(44px,7vw,82px); margin-top:14px; letter-spacing:-.04em; line-height:1.02}
+.hero h1 .grad{background:linear-gradient(100deg,#7DBBFF 0%,#2F86FF 55%,#5E9BFF 100%); -webkit-background-clip:text; background-clip:text; color:transparent}
+.hero-sub{font-size:clamp(18px,2vw,21px); color:var(--hero-fg-2); margin-top:22px; max-width:34ch; line-height:1.45}
+.hero-cta{display:flex; flex-wrap:wrap; align-items:center; gap:14px 24px; margin-top:34px}
+.hero-cta .btn-primary{background:#1A73F0; color:#fff}
+.hero-cta .btn-primary:hover{background:#2F83FF}
+.hero-cta .link-more{color:var(--hero-accent)}
+.hero-facts{display:flex; flex-wrap:wrap; gap:10px 28px; margin-top:44px; padding-top:22px; border-top:1px solid var(--hero-line); font-size:14px; color:var(--hero-fg-2)}
+.hero-facts b{color:var(--hero-fg); font-weight:600}
+
+.week{background:var(--hero-card); border:1px solid var(--hero-line); border-radius:var(--r-l); padding:28px; backdrop-filter:blur(8px)}
+.week-tag{display:inline-block; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--hero-fg-2); border:1px solid var(--hero-line); border-radius:980px; padding:3px 10px}
+.week h3{font-size:20px; margin-top:14px; letter-spacing:-.02em; font-weight:600}
+.week-num{font-family:var(--f-display); font-size:clamp(40px,5vw,54px); font-weight:700; letter-spacing:-.04em; margin-top:18px; line-height:1}
+.week-num small{font-size:18px; font-weight:500; color:var(--hero-fg-2); letter-spacing:-.01em}
+.week-cap{font-size:14px; color:var(--hero-fg-2); margin-top:6px}
+.bar{position:relative; height:16px; border-radius:980px; background:rgba(255,255,255,.08); margin-top:22px; overflow:hidden}
+.bar i{position:absolute; top:0; bottom:0; left:0; border-radius:980px}
+.bar .b-rep{background:rgba(255,255,255,.22)}
+.bar .b-gain{background:linear-gradient(90deg,#2F86FF,#73B4FF)}
+.legend{display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:12px; font-size:13px; color:var(--hero-fg-2)}
+.legend span{display:inline-flex; align-items:center; gap:7px}
+.legend span::before{content:""; width:9px; height:9px; border-radius:3px; background:var(--sw)}
+.week-rows{display:grid; gap:9px; margin-top:22px; padding-top:18px; border-top:1px solid var(--hero-line)}
+.week-rows div{display:flex; justify-content:space-between; gap:12px; font-size:14px; color:var(--hero-fg-2)}
+.week-rows b{color:var(--hero-fg); font-weight:500; font-variant-numeric:tabular-nums; white-space:nowrap}
+
+/* carrousel d'exemples */
+.slides{display:grid; touch-action:pan-y}
+.slide{grid-area:1/1; display:flex; flex-direction:column; gap:0; opacity:0; visibility:hidden; transform:translateX(12px); transition:opacity .45s ease, transform .45s ease, visibility 0s linear .45s}
+.slide.on{opacity:1; visibility:visible; transform:none; transition:opacity .45s ease, transform .45s ease, visibility 0s}
+.slide h3{font-size:21px; margin-top:14px; letter-spacing:-.022em; font-weight:600; line-height:1.2}
+.sl-sit{font-size:14.5px; color:var(--hero-fg-2); margin-top:8px; line-height:1.45}
+.sl-nums{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px; margin-top:18px; align-items:end}
+.sl-nums .week-num{margin-top:0; font-size:clamp(32px,3.8vw,46px); white-space:nowrap}
+.sl-gain .week-num{background:linear-gradient(100deg,#7DBBFF 0%,#2F86FF 70%); -webkit-background-clip:text; background-clip:text; color:transparent}
+.sl-gain .pre{font-size:13px; color:var(--hero-accent); font-weight:600; margin-bottom:2px}
+.bar-cap{font-size:13.5px; color:var(--hero-fg-2); margin-top:8px}
+.bar-cap b{color:var(--hero-fg); font-weight:600}
+.sl-agent{margin-top:20px; padding:16px 18px; border-radius:var(--r-s); background:rgba(47,134,255,.14); border:1px solid rgba(92,168,255,.28)}
+.sl-agent .k{font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--hero-accent)}
+.sl-agent p{font-size:15px; line-height:1.45; color:var(--hero-fg)}
+.sl-agent p + p{margin-top:6px}
+.sl-agent .plus{color:var(--hero-accent); font-weight:500; font-size:14.5px}
+.car-nav{display:flex; align-items:center; gap:10px; margin-top:20px; padding-top:18px; border-top:1px solid var(--hero-line)}
+.car-btn{flex:none; width:34px; height:34px; border-radius:50%; border:1px solid var(--hero-line); background:rgba(255,255,255,.06); color:var(--hero-fg); display:grid; place-items:center; cursor:pointer; transition:background-color .2s}
+.car-btn:hover{background:rgba(255,255,255,.14)}
+.car-btn svg{width:14px; height:14px}
+#carPause{margin-left:auto}
+#carPause .i-play{display:none}
+.carousel.paused #carPause .i-play{display:block}
+.carousel.paused #carPause .i-pause{display:none}
+.dots{display:flex; align-items:center; gap:7px}
+.dot{width:8px; height:8px; padding:0; border:none; border-radius:980px; background:rgba(255,255,255,.28); cursor:pointer; position:relative; overflow:hidden; transition:width .3s ease, background-color .2s}
+.dot:hover{background:rgba(255,255,255,.5)}
+.dot.on{width:40px; background:rgba(255,255,255,.22)}
+.dot i{position:absolute; inset:0 auto 0 0; width:0; background:var(--hero-fg); border-radius:980px}
+.dot.on i{animation:dotfill 120s linear forwards}
+.carousel.paused .dot.on i,.carousel:hover .dot.on i{animation-play-state:paused}
+@keyframes dotfill{from{width:0}to{width:100%}}
+@media (prefers-reduced-motion: reduce){.slide,.slide.on{transform:none; transition:none}.dot.on i{animation:dotfill 120s linear forwards!important}}
+
+/* ---------- titres de section ---------- */
+.eyebrow{font-size:17px; font-weight:600; color:var(--blue-text); letter-spacing:-.01em}
+.sec-title{font-size:clamp(34px,5.2vw,58px); margin-top:8px}
+.sec-lead{font-size:clamp(18px,2vw,21px); color:var(--fg-2); margin-top:18px; max-width:46ch; line-height:1.45}
+.sec-head{margin-bottom:56px}
+.sec-head.center{text-align:center}
+.sec-head.center .sec-lead{margin-inline:auto}
+
+/* ---------- repères chiffrés ---------- */
+.stats{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
+@media (max-width:960px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.stats{grid-template-columns:1fr}}
+.stat{background:var(--card); border-radius:var(--r-m); padding:28px 24px; display:flex; flex-direction:column; gap:10px}
+.stat-v{font-family:var(--f-display); font-size:clamp(32px,3.4vw,42px); font-weight:700; letter-spacing:-.045em; color:var(--blue-text); line-height:1; font-variant-numeric:tabular-nums}
+.stat-k{font-size:16px; color:var(--fg); line-height:1.4}
+.stat-s{font-size:12.5px; color:var(--fg-3); margin-top:auto; padding-top:8px; line-height:1.4}
+.caveat{margin-top:16px; background:var(--card); border-radius:var(--r-m); padding:30px 28px; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr); gap:28px; align-items:start}
+@media (max-width:820px){.caveat{grid-template-columns:1fr; gap:12px}}
+.caveat h3{font-size:24px; letter-spacing:-.025em}
+.caveat p{color:var(--fg-2); font-size:16.5px}
+.caveat p + p{margin-top:10px}
+
+/* ---------- approche ---------- */
+.approach{display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:16px}
+.ap{background:var(--card-alt); border-radius:var(--r-l); padding:34px 30px; display:flex; flex-direction:column; gap:12px; grid-column:span 2}
+.ap.lead{grid-column:span 6; display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:40px; padding:44px 40px; background:var(--blue-soft)}
+.ap.lead h3{font-size:clamp(28px,3.6vw,40px)}
+.ap.lead p{font-size:18px}
+.ap.wide{grid-column:span 3}
+@media (max-width:900px){.ap,.ap.wide{grid-column:span 3}.ap.lead{grid-template-columns:1fr; gap:18px; padding:34px 28px}}
+@media (max-width:620px){.ap,.ap.wide,.ap.lead{grid-column:span 6}}
+.ap h3{font-size:24px; letter-spacing:-.025em}
+.ap p{color:var(--fg-2); font-size:16.5px}
+.ap .ico{width:38px; height:38px; border-radius:11px; background:var(--blue); color:var(--blue-ink); display:grid; place-items:center}
+.ap .ico svg{width:20px; height:20px}
+.ap-method{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px}
+.ap-method span{font-size:14px; background:var(--card); border-radius:980px; padding:6px 13px; color:var(--fg)}
+
+/* ---------- services ---------- */
+.svc-group + .svc-group{margin-top:56px}
+.svc-group-h{display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:18px}
+.svc-group-h h3{font-size:26px; letter-spacing:-.025em}
+.svc-group-h p{color:var(--fg-2); font-size:15.5px}
+.svc{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px}
+@media (max-width:900px){.svc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.svc{grid-template-columns:1fr}}
+.tile{background:var(--card); border-radius:var(--r-m); padding:28px 26px; display:flex; flex-direction:column; gap:10px; min-width:0}
+.tile h4{font-size:21px; letter-spacing:-.022em; font-weight:600}
+.tile p{font-size:15.5px; color:var(--fg-2)}
+.tile .for{font-size:13px; color:var(--fg-3); margin-top:auto; padding-top:10px}
+.tile.sur{background:transparent; border:1px dashed var(--line-strong)}
+.tile.feat{grid-column:1/-1; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:32px; align-items:center; padding:32px}
+.feat-text{display:flex; flex-direction:column; gap:10px}
+.tile.feat h4{font-size:26px}
+@media (max-width:760px){.tile.feat{grid-template-columns:1fr; gap:22px; padding:26px 22px}}
+.sheet{background:var(--bg-alt); border-radius:var(--r-s); border:1px solid var(--line); overflow:hidden; min-width:0}
+.sheet-bar{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:10px 14px; border-bottom:1px solid var(--line); font-size:13px; font-weight:600}
+.sync{color:var(--gain); font-weight:500; display:inline-flex; align-items:center; gap:6px}
+.sync::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--gain)}
+.sheet-tbl{overflow-x:auto}
+.sheet table{width:100%; border-collapse:collapse; font-size:13px; font-variant-numeric:tabular-nums}
+.sheet th,.sheet td{text-align:left; padding:8px 14px; border-bottom:1px solid var(--line); white-space:nowrap}
+.sheet th{color:var(--fg-3); font-weight:600; font-size:12px; background:var(--card)}
+.sheet tr:last-child td{border-bottom:none}
+.pill{display:inline-block; padding:2px 9px; border-radius:980px; font-size:12px; font-weight:600}
+.pill.ok{color:var(--gain); background:color-mix(in srgb, var(--gain) 14%, transparent)}
+.pill.wait{color:var(--warn); background:var(--warn-soft)}
+.pill.new{color:var(--blue-text); background:var(--blue-soft)}
+
+.offer{margin-top:56px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px}
+@media (max-width:760px){.offer{grid-template-columns:1fr}}
+.offer-c{background:var(--card); border-radius:var(--r-l); padding:36px 32px}
+.offer-c .tag{font-size:13px; font-weight:600; color:var(--blue-text); letter-spacing:.02em}
+.offer-c h3{font-size:30px; margin-top:6px}
+.offer-c > p{color:var(--fg-2); margin-top:12px; font-size:16.5px}
+.offer-c ul{list-style:none; padding:0; margin:20px 0 0; display:grid; gap:10px}
+.offer-c li{display:flex; gap:11px; font-size:16px}
+.offer-c li::before{content:""; flex:none; width:18px; height:18px; margin-top:3px; border-radius:50%;
+  background:var(--blue-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%230066E0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.offer-note{margin-top:18px; color:var(--fg-2); font-size:15px; text-align:center}
+
+/* ---------- méthode ---------- */
+.steps{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; counter-reset:st}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.st{background:var(--card-alt); border-radius:var(--r-m); padding:28px 24px; display:flex; flex-direction:column; gap:10px}
+.st-n{width:34px; height:34px; border-radius:50%; border:1.5px solid var(--blue); color:var(--blue-text); display:grid; place-items:center; font-weight:600; font-size:15px}
+.st h4{font-size:20px; letter-spacing:-.02em; font-weight:600; margin-top:6px}
+.st p{font-size:15.5px; color:var(--fg-2)}
+.st .dur{margin-top:auto; padding-top:10px; font-size:13.5px; font-weight:600; color:var(--fg)}
+.steps-note{text-align:center; margin-top:26px; color:var(--fg-2); font-size:15.5px}
+
+/* ---------- appel à l'action ---------- */
+.cta{background:var(--hero-bg); color:var(--hero-fg); position:relative; overflow:hidden; text-align:center; padding-block:110px}
+.cta::before{content:""; position:absolute; width:900px; height:600px; left:50%; bottom:-380px; transform:translateX(-50%); background:radial-gradient(closest-side, var(--hero-glow), transparent 70%)}
+.cta .wrap{position:relative}
+.cta h2{font-size:clamp(34px,5.2vw,58px)}
+.cta p{color:var(--hero-fg-2); font-size:20px; margin:18px auto 0; max-width:42ch}
+.cta .btn{margin-top:34px; background:#1A73F0; color:#fff}
+.cta .btn:hover{background:#2F83FF}
+
+/* ---------- à propos + faq ---------- */
+.about{display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:56px; align-items:start}
+@media (max-width:820px){.about{grid-template-columns:1fr; gap:28px}}
+.about-card{background:var(--card); border-radius:var(--r-l); padding:34px 30px}
+.monogram{width:72px; height:72px; border-radius:50%; background:linear-gradient(135deg,#1A73F0,#5CA8FF); color:#fff; display:grid; place-items:center; font-family:var(--f-display); font-weight:700; font-size:26px; letter-spacing:-.03em}
+.about-card h3{font-size:26px; margin-top:20px}
+.about-card .role{color:var(--fg-2); margin-top:4px; font-size:16px}
+.about-text p{font-size:18px; color:var(--fg-2); line-height:1.55}
+.about-text p + p{margin-top:16px}
+.about-text b{color:var(--fg); font-weight:600}
+
+.faq{max-width:760px; margin:0 auto}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none; cursor:pointer; padding:22px 40px 22px 0; font-size:19px; font-weight:600; letter-spacing:-.02em; position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+"; position:absolute; right:4px; top:50%; transform:translateY(-50%); font-size:26px; font-weight:300; color:var(--blue-text); transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq details p{padding:0 0 24px; color:var(--fg-2); font-size:16.5px; max-width:62ch}
+
+/* ---------- pied de page ---------- */
+.foot{background:var(--bg-alt); padding-block:56px 48px; font-size:13px; color:var(--fg-3)}
+.foot-top{display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; align-items:center; padding-bottom:28px; border-bottom:1px solid var(--line)}
+.foot-mail{font-size:17px; color:var(--fg); display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+.foot-mail code{font-family:var(--f-text); user-select:all; font-weight:500}
+.sources{margin-top:24px}
+.sources h4{font-size:13px; color:var(--fg-2); font-weight:600; letter-spacing:0; margin-bottom:10px; font-family:var(--f-text)}
+.sources ol{margin:0; padding-left:18px; display:grid; gap:6px; columns:2; column-gap:40px; display:block}
+.sources li{margin-bottom:6px; break-inside:avoid; line-height:1.45}
+@media (max-width:700px){.sources ol{columns:1}}
+.sources a{color:var(--fg-2)}
+
+/* ============ DIAGNOSTIC ============ */
+.diag{min-height:100vh; padding-bottom:140px; background:var(--bg-alt)}
+.diag-head{padding-block:44px 28px}
+.diag-back{background:none; border:none; padding:0; color:var(--blue-text); cursor:pointer; font-size:15px}
+.diag-back::before{content:"‹ "}
+.progress{display:flex; gap:6px; margin-top:28px}
+.progress i{flex:1; height:4px; border-radius:980px; background:var(--line-strong); transition:background-color .3s}
+.progress i.on{background:var(--blue)}
+.step-meta{margin-top:14px; font-size:14px; color:var(--fg-3); font-variant-numeric:tabular-nums}
+.diag h2{font-size:clamp(30px,4.4vw,46px); margin-top:6px}
+.diag .intro{color:var(--fg-2); font-size:18px; margin-top:12px; max-width:56ch}
+.panel{background:var(--card); border-radius:var(--r-l); padding:34px 32px; margin-top:28px}
+@media (max-width:600px){.panel{padding:26px 20px}}
+.fields{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 18px}
+@media (max-width:620px){.fields{grid-template-columns:1fr}}
+.field{display:flex; flex-direction:column; gap:7px; min-width:0}
+.field.full{grid-column:1/-1}
+.field label,.q-l{font-size:14px; font-weight:600; color:var(--fg)}
+.q-l .opt,.field label .opt{font-weight:400; color:var(--fg-3)}
+.hint{font-size:13.5px; color:var(--fg-3)}
+.inp{width:100%; background:var(--bg-alt); border:1px solid transparent; border-radius:var(--r-s); padding:12px 14px; font-size:16px; transition:border-color .2s, box-shadow .2s, background-color .2s}
+.inp:focus{outline:none; border-color:var(--blue); background:var(--card); box-shadow:0 0 0 4px var(--blue-soft)}
+.inp.err{border-color:var(--warn)}
+textarea.inp{min-height:92px; resize:vertical; line-height:1.5}
+.err-msg{font-size:13.5px; color:var(--warn)}
+.q + .q{margin-top:30px; padding-top:28px; border-top:1px solid var(--line)}
+.q .hint{margin-top:4px}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+.chip{border:1px solid var(--line-strong); background:var(--card); border-radius:980px; padding:8px 16px; font-size:15px; cursor:pointer; transition:all .15s}
+.chip:hover{border-color:var(--fg-3)}
+.chip[aria-pressed="true"]{background:var(--blue); border-color:var(--blue); color:var(--blue-ink)}
+
+.tasks{display:grid; gap:10px; margin-top:28px}
+.task{background:var(--card); border-radius:var(--r-m); border:1.5px solid transparent; transition:border-color .2s}
+.task.on{border-color:var(--blue)}
+.task-top{width:100%; display:flex; align-items:center; gap:16px; padding:18px 20px; background:none; border:none; cursor:pointer; text-align:left}
+.tick{flex:none; width:24px; height:24px; border-radius:50%; border:1.5px solid var(--line-strong); display:grid; place-items:center; transition:all .15s}
+.task.on .tick{background:var(--blue); border-color:var(--blue)}
+.tick svg{width:13px; height:13px; opacity:0}
+.task.on .tick svg{opacity:1}
+.task-name{flex:1; min-width:0; font-size:16.5px; font-weight:500}
+.task-h{flex:none; font-size:15px; font-weight:600; color:var(--blue-text); font-variant-numeric:tabular-nums}
+.task-body{padding:0 20px 20px 60px; display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr); gap:14px}
+@media (max-width:640px){.task-body{grid-template-columns:1fr 1fr; padding-left:20px}.task-body .f-qty{grid-column:1/-1}}
+.qty-row{display:flex; gap:8px}
+.qty-row .inp{min-width:0}
+.qty-row select.inp{flex:1.3}
+.qty-row input.inp{flex:1}
+.task-body .hint{grid-column:1/-1}
+
+.other-inp{margin-top:10px; max-width:440px}
+.span-all{grid-column:1/-1}
+.sugg{margin-top:10px}
+.sugg .chip{font-size:14px; padding:6px 13px}
+.ppl{font-style:normal; font-weight:500; font-size:12.5px; color:var(--blue-text); background:var(--blue-soft); border-radius:980px; padding:2px 9px; margin-left:6px; white-space:nowrap}
+.notice{background:var(--blue-soft); border-radius:var(--r-m); padding:22px 24px; margin-top:16px; display:grid; gap:6px; font-size:15.5px; color:var(--fg-2)}
+.notice b{color:var(--fg); font-size:16.5px}
+.restart{text-align:center; margin-top:28px; color:var(--fg-2)}
+.warn-box{margin-top:18px; background:var(--warn-soft); color:var(--warn); border-radius:var(--r-s); padding:14px 16px; font-size:15px}
+
+/* barre d'action fixe */
+.dock{position:fixed; left:0; right:0; bottom:0; z-index:40; background:var(--nav-bg); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); border-top:1px solid var(--line); padding-bottom:env(safe-area-inset-bottom,0px)}
+.dock-in{display:flex; align-items:center; gap:14px; min-height:72px; padding-block:12px}
+.dock-live{margin-right:auto; min-width:0}
+.dock-live .k{font-size:12.5px; color:var(--fg-3)}
+.dock-live .v{font-size:19px; font-weight:700; letter-spacing:-.02em; font-variant-numeric:tabular-nums}
+.dock-live .v small{font-size:14px; font-weight:500; color:var(--fg-2)}
+@media (max-width:460px){.dock .btn{padding:10px 16px; font-size:15px}.dock-live .v{font-size:17px}}
+
+/* résultat */
+.res-hero{background:var(--hero-bg); color:var(--hero-fg); border-radius:var(--r-l); padding:44px 40px; margin-top:28px; position:relative; overflow:hidden}
+.res-hero::before{content:""; position:absolute; width:700px; height:700px; right:-260px; top:-380px; background:radial-gradient(closest-side, var(--hero-glow), transparent 70%)}
+.res-hero > *{position:relative}
+@media (max-width:600px){.res-hero{padding:32px 22px}}
+.res-k{font-size:15px; color:var(--hero-accent); font-weight:600}
+.res-v{font-family:var(--f-display); font-size:clamp(40px,7vw,72px); font-weight:700; letter-spacing:-.045em; line-height:1.02; margin-top:10px}
+.res-v small{display:block; font-size:clamp(17px,2vw,20px); font-weight:500; letter-spacing:-.015em; color:var(--hero-fg-2); margin-top:10px}
+.res-kpis{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:34px; padding-top:26px; border-top:1px solid var(--hero-line)}
+@media (max-width:620px){.res-kpis{grid-template-columns:1fr}}
+.res-kpis .v{font-size:28px; font-weight:700; letter-spacing:-.03em; font-variant-numeric:tabular-nums}
+.res-kpis .k{font-size:14px; color:var(--hero-fg-2); margin-top:2px}
+
+.panel h3{font-size:24px; letter-spacing:-.025em}
+.panel .sub{color:var(--fg-2); font-size:15.5px; margin-top:6px}
+.rows{display:grid; gap:18px; margin-top:24px}
+.row-top{display:flex; justify-content:space-between; gap:14px; font-size:15.5px}
+.row-top b{font-weight:600}
+.row-top span{color:var(--fg-2); font-variant-numeric:tabular-nums; white-space:nowrap; font-size:14.5px}
+.rbar{position:relative; height:10px; border-radius:980px; background:var(--bg-alt); margin-top:9px; overflow:hidden}
+.rbar i{position:absolute; top:0; bottom:0; left:0; border-radius:980px}
+.rbar .cur{background:var(--line-strong)}
+.rbar .lo{background:var(--blue)}
+.rbar .hi{background:var(--blue); opacity:.4}
+.rlegend{display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:22px; font-size:13px; color:var(--fg-3)}
+.rlegend span{display:inline-flex; align-items:center; gap:7px}
+.rlegend span::before{content:""; width:10px; height:10px; border-radius:3px; background:var(--sw); opacity:var(--op,1)}
+
+.agent-list{display:grid; gap:14px; margin-top:22px}
+.agent{display:grid; grid-template-columns:auto minmax(0,1fr); gap:14px; align-items:start}
+.agent .n{width:28px; height:28px; border-radius:50%; background:var(--blue-soft); color:var(--blue-text); display:grid; place-items:center; font-size:14px; font-weight:600}
+.agent b{font-weight:600; font-size:16.5px}
+.agent p{color:var(--fg-2); font-size:15.5px; margin-top:2px}
+
+.method details{margin-top:4px}
+.method summary{cursor:pointer; font-weight:600; font-size:17px; color:var(--blue-text); list-style:none}
+.method summary::-webkit-details-marker{display:none}
+.method summary::after{content:" ›"}
+.method details[open] summary::after{content:" ⌄"}
+.method-body{margin-top:18px; display:grid; gap:12px; color:var(--fg-2); font-size:15px}
+.tbl-wrap{overflow-x:auto}
+.tbl{width:100%; border-collapse:collapse; font-size:14px; margin-top:6px}
+.tbl th,.tbl td{text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top}
+.tbl th{color:var(--fg-3); font-weight:600; font-size:12.5px}
+.tbl td.n{font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--fg)}
+
+.send{background:var(--card); border-radius:var(--r-l); padding:36px 32px; margin-top:16px; border:1.5px solid var(--blue)}
+@media (max-width:600px){.send{padding:28px 20px}}
+.send h3{font-size:28px}
+.send > p{color:var(--fg-2); margin-top:8px}
+.consent{display:flex; gap:12px; align-items:flex-start; margin-top:22px; font-size:15px; color:var(--fg-2); cursor:pointer}
+.consent input{width:20px; height:20px; margin-top:1px; accent-color:var(--blue); flex:none}
+.send-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; align-items:center}
+.btn.is-off{opacity:.4; pointer-events:none}
+.addr{margin-top:22px; padding:16px 18px; border-radius:var(--r-s); background:var(--bg-alt); font-size:15px; color:var(--fg-2); display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center}
+.addr code{font-family:var(--f-text); font-weight:600; color:var(--fg); user-select:all}
+.recap{margin-top:16px}
+.recap summary{cursor:pointer; font-size:15px; color:var(--blue-text); list-style:none}
+.recap summary::-webkit-details-marker{display:none}
+.recap textarea{margin-top:12px; width:100%; min-height:260px; font-size:13.5px; line-height:1.5; font-family:ui-monospace, "SF Mono", Menlo, Consolas, monospace; background:var(--bg-alt); border:1px solid var(--line); border-radius:var(--r-s); padding:14px; color:var(--fg)}
+.toast{position:fixed; left:50%; bottom:calc(96px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); background:var(--fg); color:var(--bg); padding:11px 20px; border-radius:980px; font-size:15px; z-index:80; max-width:calc(100% - 32px); text-align:center}
+</style>
+
+</head>
+<body>
+<!-- ======================= SITE ======================= -->
+<div id="site">
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="logo" href="#accueil">Diba<span>.design.ia</span></a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#approche">Approche</a>
+        <a href="#services">Services</a>
+        <a href="#methode">Méthode</a>
+        <a href="#apropos">À propos</a>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="#diagnostic">Diagnostic gratuit</a>
+    </div>
+  </header>
+
+  <section class="hero" id="accueil">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">Service design · UX/UI · Agents IA</p>
+        <h1>Votre équipe mérite <span class="grad">son temps</span>.</h1>
+        <p class="hero-sub">Je conçois des agents IA sur mesure qui prennent en charge les tâches répétitives de votre entreprise. Vous gardez le temps pour vos clients, votre métier et vos décisions.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="#diagnostic">Mesurer mon temps récupérable</a>
+          <a class="link-more" href="#services">Voir les services</a>
+        </div>
+        <div class="hero-facts">
+          <span><b>8 minutes</b> pour le diagnostic</span>
+          <span><b>Gratuit</b> et sans engagement</span>
+          <span><b>Un agent</b> conçu pour votre métier</span>
+        </div>
+      </div>
+
+      <section class="week carousel" id="carousel" aria-roledescription="carrousel" aria-label="Exemples d'agents en situation">
+        <div class="slides" id="slides" aria-live="polite"></div>
+        <div class="legend">
+          <span style="--sw:linear-gradient(90deg,#2F86FF,#73B4FF)">Temps rendu par l'agent</span>
+          <span style="--sw:rgba(255,255,255,.22)">Reste des tâches répétitives</span>
+        </div>
+        <div class="car-nav">
+          <button type="button" class="car-btn" id="carPrev" aria-label="Exemple précédent"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg></button>
+          <div class="dots" id="dots" role="tablist" aria-label="Choisir un exemple"></div>
+          <button type="button" class="car-btn" id="carNext" aria-label="Exemple suivant"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l5 5-5 5"/></svg></button>
+          <button type="button" class="car-btn" id="carPause" aria-label="Mettre en pause le défilement" aria-pressed="false"><svg class="i-pause" viewBox="0 0 16 16" fill="currentColor"><rect x="4" y="3" width="3" height="10" rx="1"/><rect x="9" y="3" width="3" height="10" rx="1"/></svg><svg class="i-play" viewBox="0 0 16 16" fill="currentColor"><path d="M5 3.2v9.6a.6.6 0 00.9.5l7.6-4.8a.6.6 0 000-1L5.9 2.7a.6.6 0 00-.9.5z"/></svg></button>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- Repères -->
+  <section class="band alt" id="reperes">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Les repères</p>
+        <h2 class="sec-title">Le temps perdu a un vrai chiffre.</h2>
+        <p class="sec-lead">Le marché bouge vite, et les tâches répétitives coûtent plus qu'on ne l'imagine.</p>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-v">15 → 55 %</div>
+          <p class="stat-k">d'entreprises utilisant l'IA agentique entre 2023 et 2025.</p>
+          <p class="stat-s">Sommet Virtuel IA, Alegria Academy, 2026</p>
+        </div>
+        <div class="stat">
+          <div class="stat-v">60 %</div>
+          <p class="stat-k">du temps de travail payé serait automatisable.</p>
+          <p class="stat-s">McKinsey, cité au Sommet Virtuel IA, 2026</p>
+        </div>
+        <div class="stat">
+          <div class="stat-v">3 mois</div>
+          <p class="stat-k">de travail par an : c'est ce que représentent 40 h par mois de tâches répétitives, soit 480 h et 68 jours.</p>
+          <p class="stat-s">Calcul présenté au Sommet Virtuel IA, 2026</p>
+        </div>
+        <div class="stat">
+          <div class="stat-v">90 %</div>
+          <p class="stat-k">du travail fait par l'agent, vous supervisez le reste. Avec un simple chatbot, c'est l'inverse.</p>
+          <p class="stat-s">Sommet Virtuel IA, Alegria Academy, 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approche -->
+  <section class="band" id="approche">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Ce que je fais autrement</p>
+        <h2 class="sec-title">On comprend d'abord. On automatise ensuite.</h2>
+      </div>
+      <div class="approach">
+        <article class="ap lead">
+          <div>
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="9" r="5.5"/><path d="M13.2 13.2L17 17"/></svg></div>
+            <h3 style="margin-top:18px">Une designer de services, spécialisée en IA.</h3>
+          </div>
+          <div>
+            <p>Je suis service designer et UX/UI designer. Mon travail consiste à comprendre comment vos équipes et vos clients vivent vraiment vos process, puis à concevoir la solution qui les simplifie.</p>
+            <p style="margin-top:14px">Ensemble, nous cernons précisément votre problème grâce à une méthodologie qui a fait ses preuves et que je pratique depuis plusieurs années. Un agent posé sur un process mal compris ne fait qu'accélérer le problème.</p>
+            <div class="ap-method">
+              <span>Entretiens</span><span>Observation terrain</span><span>Parcours utilisateur</span><span>Ateliers de co-conception</span><span>Prototype testé</span>
+            </div>
+          </div>
+        </article>
+        <article class="ap">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 16V9M8 16V4M13 16v-5M18 16V7"/></svg></div>
+          <h3>Je mesure avant de proposer.</h3>
+          <p>Le diagnostic chiffre en heures ce que vos tâches répétitives vous coûtent, avec des taux de gain prudents et sourcés. Vous décidez sur un constat, pas sur une promesse.</p>
+        </article>
+        <article class="ap">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1.5"/><rect x="11" y="11" width="6" height="6" rx="1.5" stroke-dasharray="2 2"/></svg></div>
+          <h3>Un agent à la fois.</h3>
+          <p>On commence par la tâche qui pèse le plus. On mesure le gain réel sur deux semaines, puis on décide ensemble s'il faut aller plus loin.</p>
+        </article>
+        <article class="ap">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 17s-6-3.6-6-8.2A3.4 3.4 0 0110 7a3.4 3.4 0 016 1.8C16 13.4 10 17 10 17z"/></svg></div>
+          <h3>Je reste à vos côtés.</h3>
+          <p>Vous pouvez devenir autonome, ce n'est pas une obligation. Je reste présente pour le moindre changement et j'améliore l'agent au fil de vos besoins. C'est le rôle de l'abonnement de suivi.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="band alt" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Services</p>
+        <h2 class="sec-title">Ce que votre agent peut prendre en charge.</h2>
+        <p class="sec-lead">Chaque agent est conçu pour votre métier, vos outils et votre façon de parler à vos clients.</p>
+      </div>
+
+      <div class="svc-group">
+        <div class="svc-group-h"><h3>Rendre du temps à l'équipe</h3><p>Les tâches qui reviennent chaque jour.</p></div>
+        <div class="svc">
+          <div class="tile feat">
+            <div class="feat-text">
+              <h4>Fichiers Excel connectés</h4>
+              <p>Un tableau Excel ou Google Sheets relié à vos outils, qui se remplit et se met à jour tout seul : ventes, devis, stocks, planning, suivi client. Plus de copier-coller le vendredi soir, des chiffres à jour quand vous ouvrez le fichier.</p>
+              <p class="for">Dirigeants, gestion, commerce, artisans</p>
+            </div>
+            <div class="sheet" role="img" aria-label="Exemple de tableau de suivi mis à jour automatiquement">
+              <div class="sheet-bar"><span>Suivi des devis</span><span class="sync">Mis à jour à 8 h 00</span></div>
+              <div class="sheet-tbl">
+                <table>
+                  <thead><tr><th>Client</th><th>Envoyé le</th><th>Statut</th><th>Relance</th></tr></thead>
+                  <tbody>
+                    <tr><td>Martin Rénovation</td><td>14/10</td><td><span class="pill ok">Signé</span></td><td>–</td></tr>
+                    <tr><td>Café des Halles</td><td>17/10</td><td><span class="pill wait">En attente</span></td><td>J+11</td></tr>
+                    <tr><td>Cabinet Morel</td><td>21/10</td><td><span class="pill wait">En attente</span></td><td>J+7</td></tr>
+                    <tr><td>SCI Les Tilleuls</td><td>25/10</td><td><span class="pill new">Nouveau</span></td><td>–</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="tile"><h4>Réponses aux demandes</h4><p>Les emails et messages qui reviennent reçoivent une réponse prête, dans votre ton. Vous validez d'un geste.</p><p class="for">Accueil, service client, cabinets</p></div>
+          <div class="tile"><h4>Relances automatiques</h4><p>Devis sans réponse, factures en retard, dossiers incomplets : chacun est relancé au bon moment, avec le bon ton.</p><p class="for">Artisans, prestataires, commerce B2B</p></div>
+          <div class="tile"><h4>Saisie et classement</h4><p>Les informations de vos documents entrants arrivent au bon endroit, sans recopie. Les cas douteux vous sont signalés.</p><p class="for">Gestion, comptabilité, logistique</p></div>
+          <div class="tile"><h4>Mémoire d'entreprise</h4><p>Une question, une réponse sourcée : procédures, tarifs, historique client. Fini les recherches dans trois outils.</p><p class="for">Équipes qui partagent beaucoup d'infos</p></div>
+          <div class="tile"><h4>Documents et comptes rendus</h4><p>Devis, rapports, comptes rendus de réunion : un premier jet structuré en quelques minutes, à relire.</p><p class="for">Conseil, architecture, immobilier</p></div>
+          <div class="tile"><h4>Rendez-vous et suivi</h4><p>Prise de rendez-vous, confirmations et rappels sans aller-retour, pour moins d'absences et moins d'appels.</p><p class="for">Santé, beauté, services à domicile</p></div>
+        </div>
+      </div>
+
+      <div class="svc-group">
+        <div class="svc-group-h"><h3>Capter plus de clients</h3><p>Les occasions qui se perdent faute de temps.</p></div>
+        <div class="svc">
+          <div class="tile"><h4>Accueil téléphonique</h4><p>Un agent vocal qui répond 24 h sur 24, qualifie la demande et vous transmet l'essentiel. Plus aucun appel sans suite.</p><p class="for">Restaurants, cabinets, agences</p></div>
+          <div class="tile"><h4>Contenus et visibilité</h4><p>Des publications régulières, dans votre ton, préparées à l'avance. Vous choisissez ce qui part.</p><p class="for">Commerces, indépendants, marques</p></div>
+          <div class="tile"><h4>Prospection qualifiée</h4><p>Des prospects repérés selon vos critères et un premier contact personnalisé, pour un flux de demandes plus régulier.</p><p class="for">Prestataires B2B, consultants</p></div>
+        </div>
+      </div>
+
+      <div class="svc-group">
+        <div class="svc">
+          <div class="tile" style="grid-column:span 2"><h4>Votre méthode, installée</h4><p>Le savoir-faire de votre équipe écrit une fois et installé dans votre IA, pour que chacun obtienne le même résultat de qualité, à chaque fois.</p><p class="for">Équipes qui veulent standardiser leur façon de faire</p></div>
+          <div class="tile sur"><h4>Sur mesure</h4><p>Votre tâche n'est pas dans la liste ? Elle a peut-être sa solution. On la regarde ensemble.</p></div>
+        </div>
+      </div>
+
+      <div class="offer">
+        <div class="offer-c">
+          <p class="tag">La conception</p>
+          <h3>Un agent pensé pour vous.</h3>
+          <p>Une mission courte, cadrée, avec un point d'arrêt possible à chaque étape.</p>
+          <ul>
+            <li>Immersion dans vos process et vos outils</li>
+            <li>Conception et mise en place de l'agent</li>
+            <li>Pilote de deux semaines et gain mesuré</li>
+            <li>Prise en main par votre équipe</li>
+          </ul>
+        </div>
+        <div class="offer-c">
+          <p class="tag">L'abonnement de suivi</p>
+          <h3>Un agent qui évolue avec vous.</h3>
+          <p>Votre activité change, l'agent aussi. Je reste votre interlocutrice.</p>
+          <ul>
+            <li>Ajustements dès que vos besoins changent</li>
+            <li>Améliorations à partir de l'usage réel</li>
+            <li>Disponibilité pour la moindre question</li>
+            <li>Point régulier sur le temps gagné</li>
+          </ul>
+        </div>
+      </div>
+      <p class="offer-note">Le budget est présenté après le diagnostic, en deux lignes claires : la conception et l'abonnement.</p>
+    </div>
+  </section>
+
+  <!-- Méthode -->
+  <section class="band" id="methode">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">La méthode</p>
+        <h2 class="sec-title">Quatre étapes, un résultat mesuré.</h2>
+      </div>
+      <div class="steps">
+        <div class="st"><span class="st-n">1</span><h4>Diagnostic</h4><p>Vous listez vos tâches répétitives en ligne. Vous obtenez le temps récupérable, et je reçois votre diagnostic.</p><p class="dur">8 minutes, en ligne</p></div>
+        <div class="st"><span class="st-n">2</span><h4>Immersion et cadrage</h4><p>Entretiens avec les personnes concernées, observation des process, cartographie du parcours. On choisit la tâche à traiter en premier.</p><p class="dur">½ journée à 1 semaine</p></div>
+        <div class="st"><span class="st-n">3</span><h4>Conception et pilote</h4><p>Je conçois l'agent, on le teste sur vos vrais cas, et on mesure le temps réellement rendu.</p><p class="dur">2 semaines</p></div>
+        <div class="st"><span class="st-n">4</span><h4>Suivi et évolution</h4><p>Votre équipe est formée. L'agent s'améliore avec l'usage et s'adapte à vos nouveaux besoins.</p><p class="dur">En continu</p></div>
+      </div>
+      <p class="steps-note">Vous pouvez vous arrêter après chaque étape.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Combien d'heures votre équipe pourrait-elle récupérer&nbsp;?</h2>
+      <p>Huit minutes pour le savoir, en heures et en jours, avec des moyennes réalistes.</p>
+      <a class="btn btn-lg" href="#diagnostic">Commencer le diagnostic</a>
+    </div>
+  </section>
+
+  <!-- À propos + FAQ -->
+  <section class="band alt" id="apropos">
+    <div class="wrap about">
+      <div class="about-card">
+        <div class="monogram" aria-hidden="true">DB</div>
+        <h3>Diane Barbat</h3>
+        <p class="role">Service designer et UX/UI designer, spécialisée en IA</p>
+      </div>
+      <div class="about-text">
+        <p><b>Mon métier, c'est de comprendre comment les gens travaillent vraiment.</b> Depuis plusieurs années, je mène des entretiens, des observations sur le terrain et des ateliers de co-conception pour des entreprises et de grands groupes, afin de concevoir des services plus simples pour ceux qui les utilisent.</p>
+        <p>J'applique aujourd'hui cette méthode à l'IA. Avant de construire le moindre agent, je regarde votre quotidien, vos exceptions et vos contraintes. C'est ce qui fait la différence entre un outil qu'on abandonne au bout d'un mois et un agent qui fait gagner du temps pour de bon.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot" id="contact">
+    <div class="wrap">
+      <div class="foot-top">
+        <a class="logo" href="#accueil">Diba<span>.design.ia</span></a>
+        <div class="foot-mail">Écrire à Diane : <code>diane.barbat.pro@gmail.com</code> <button class="btn btn-quiet btn-sm" type="button" data-copy="diane.barbat.pro@gmail.com">Copier</button></div>
+      </div>
+      <div class="sources">
+        <h4>Sources des repères et du calcul</h4>
+        <ol>
+          <li>Sommet Virtuel IA, Alegria Academy (septembre 2026) : chiffres de marché, calcul des trois mois, agent contre chatbot</li>
+          <li><a href="https://www.insee.fr/fr/statistiques/7456897" target="_blank" rel="noopener">Insee, durée et organisation du temps de travail (2022)</a> : base annuelle du diagnostic</li>
+          <li><a href="https://economics.mit.edu/news/study-finds-chatgpt-boosts-worker-productivity-some-writing-tasks" target="_blank" rel="noopener">MIT, Noy &amp; Zhang, effets de l'IA générative sur la rédaction (2023)</a></li>
+          <li><a href="https://itif.org/publications/2024/06/11/evidence-shows-productivity-benefits-of-ai" target="_blank" rel="noopener">ITIF, synthèse des études contrôlées (BCG, service client, développement)</a></li>
+          <li><a href="https://fr-fr.newsroom.workday.com/2026-01-14-Les-entreprises-exploitent-mal-les-benefices-de-lIA" target="_blank" rel="noopener">Workday, « Beyond Productivity », temps de correction des contenus IA (janvier 2026)</a></li>
+        </ol>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ======================= DIAGNOSTIC ======================= -->
+<div id="diag" class="diag" hidden>
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="logo" href="#accueil">Diba<span>.design.ia</span></a>
+      <span style="font-size:14px;color:var(--fg-3)">Diagnostic du temps récupérable</span>
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="diag-head">
+      <button class="diag-back" type="button" id="backSite">Retour au site</button>
+      <div class="progress" id="progress" aria-hidden="true"></div>
+      <p class="step-meta" id="stepMeta"></p>
+    </div>
+    <div id="diagBody"></div>
+  </div>
+  <div class="dock">
+    <div class="wrap dock-in">
+      <div class="dock-live" id="dockLive"><div class="k">Aujourd'hui sur ces tâches</div><div class="v">0 h <small>/ semaine</small></div></div>
+      <button class="btn btn-quiet" type="button" id="prevBtn">Retour</button>
+      <button class="btn btn-primary" type="button" id="nextBtn">Continuer</button>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+/* ============================================================
+   BASES DE CALCUL — moyennes françaises
+   Insee 2022 : 1 664 h effectives par an pour 38,9 h par semaine
+   chez les salariés à temps complet → ≈ 43 semaines travaillées.
+   ============================================================ */
+const WEEKS_PER_YEAR = 43;
+const HOURS_PER_DAY = 7.8;           // 38,9 h / 5 jours
+const REAL_LOW = 0.60;               // Workday 2025 : ~40 % du temps gagné reperdu en corrections
+const REAL_HIGH = 0.85;              // agent cadré et relu : 15 % gardés pour la supervision
+const UNIT_TO_WEEK = { jour:5, semaine:1, mois:12/WEEKS_PER_YEAR };
+const DATA_FACTOR = { "Dans des outils bien rangés":1, "Dans des fichiers dispersés":0.9, "Surtout dans la tête des gens":0.75 };
+
+/* share = part de la tâche qu'un agent peut prendre en charge, avant correction de réalisation */
+const TASKS = [
+  { id:"email", label:"Répondre aux emails et demandes qui reviennent", short:"Emails récurrents", what:"emails ou demandes", qty:30, unit:"semaine", min:5, share:0.45,
+    basis:"Rédaction : −40 % de temps mesuré (MIT 2023), plus le tri automatique", agent:"Trie les demandes et prépare une réponse dans votre ton. Vous validez avant l'envoi." },
+  { id:"relance", label:"Relancer des devis, des factures ou des clients", short:"Relances", what:"relances", qty:10, unit:"semaine", min:8, share:0.70,
+    basis:"Tâche très régulière, déclenchée par une date ou un statut", agent:"Suit les devis et factures en attente et relance au bon moment, avec le bon ton." },
+  { id:"saisie", label:"Recopier des informations d'un document ou d'un outil à l'autre", short:"Saisie", what:"documents ou fiches", qty:20, unit:"semaine", min:5, share:0.60,
+    basis:"Extraction fiable sur les cas courants, file d'exception pour le reste", agent:"Lit vos documents entrants et range les informations au bon endroit. Les cas douteux vous sont signalés." },
+  { id:"recherche", label:"Chercher une information (dossier, mail, fichier, tarif)", short:"Recherche d'information", what:"recherches", qty:15, unit:"semaine", min:6, share:0.40,
+    basis:"Dépend fortement de l'organisation des données", agent:"Retrouve l'information dans vos documents et vous répond en citant la source." },
+  { id:"doc", label:"Rédiger des documents répétitifs (devis, contrats, rapports)", short:"Documents répétitifs", what:"documents", qty:5, unit:"semaine", min:30, share:0.45,
+    basis:"Rédaction assistée : −25 à −40 % selon les études contrôlées (BCG, MIT)", agent:"Rédige un premier jet à partir de vos modèles. Vous relisez et ajustez." },
+  { id:"rdv", label:"Planifier, confirmer et rappeler des rendez-vous", short:"Rendez-vous", what:"rendez-vous", qty:15, unit:"semaine", min:4, share:0.70,
+    basis:"Échanges standardisés, peu d'exceptions", agent:"Propose des créneaux, confirme et rappelle les rendez-vous." },
+  { id:"appel", label:"Répondre au téléphone pour des questions simples", short:"Appels simples", what:"appels", qty:25, unit:"semaine", min:4, share:0.45,
+    basis:"Questions fréquentes et prise de message ; le reste est transféré", agent:"Répond aux questions simples, prend les messages et vous transmet ce qui compte." },
+  { id:"reunion", label:"Prendre des notes et rédiger les comptes rendus", short:"Comptes rendus", what:"réunions", qty:3, unit:"semaine", min:25, share:0.65,
+    basis:"Transcription et synthèse automatiques, relecture courte", agent:"Transforme vos réunions en compte rendu structuré avec les actions à suivre." },
+  { id:"reporting", label:"Consolider des chiffres et tenir des tableaux de suivi", short:"Reporting", what:"mises à jour", qty:4, unit:"mois", min:60, share:0.60,
+    basis:"Collecte et mise en forme automatisables, analyse humaine", agent:"Rassemble vos chiffres et met vos tableaux de suivi à jour." },
+  { id:"recrutement", label:"Trier des candidatures", short:"Tri de candidatures", what:"candidatures", qty:15, unit:"mois", min:6, share:0.50,
+    basis:"Pré-tri sur critères, décision humaine", agent:"Pré-trie les candidatures selon vos critères. La décision reste la vôtre." },
+  { id:"contenu", label:"Préparer des publications pour les réseaux sociaux", short:"Publications", what:"publications", qty:2, unit:"semaine", min:45, share:0.40,
+    basis:"Premier jet et déclinaisons ; le choix éditorial reste humain", agent:"Prépare vos publications dans votre ton. Vous choisissez ce qui part." },
+  { id:"prospection", label:"Chercher et qualifier des prospects", short:"Prospection", what:"prospects", qty:20, unit:"semaine", min:6, share:0.50,
+    basis:"Recherche et qualification automatisables, premier contact relu", agent:"Repère et qualifie des prospects selon vos critères." },
+  { id:"autre", label:"Une autre tâche répétitive", short:"Autre tâche", what:"fois", qty:5, unit:"semaine", min:15, share:0.35,
+    basis:"Hypothèse prudente, à préciser pendant le cadrage", agent:"À définir ensemble pendant le cadrage." }
+];
+const T = Object.fromEntries(TASKS.map(t => [t.id, t]));
+
+const SECTEURS = ["Artisanat / BTP","Commerce / e-commerce","Restauration / hôtellerie","Santé / médico-social","Immobilier","Conseil / services aux entreprises","Juridique / comptable","Formation / éducation","Transport / logistique","Services à la personne","Industrie / agriculture","Association / secteur public","Autre"];
+
+/* ============================================================
+   ÉTAT
+   ============================================================ */
+const blank = () => ({
+  contact:{ prenom:"", nom:"", entreprise:"", email:"", tel:"", secteur:"", effectif:"", role:"" },
+  tasks:{},
+  org:{ infos:"", outils:[], ia:"", sensible:"" },
+  prio:{ tache:"", reussite:"", dispo:[], message:"" },
+  consent:false
+});
+let S = blank();
+let step = 0;
+try { const raw = localStorage.getItem("diba-diag"); if (raw) S = Object.assign(blank(), JSON.parse(raw)); } catch(e){}
+function save(){ try { localStorage.setItem("diba-diag", JSON.stringify(S)); } catch(e){} }
+
+/* ============================================================
+   CALCUL
+   ============================================================ */
+function weekly(t){ // heures / semaine pour une tâche sélectionnée
+  const q = Math.max(0, Number(t.qty)||0), m = Math.max(0, Number(t.min)||0), p = Math.max(1, Number(t.people)||1);
+  return q * (UNIT_TO_WEEK[t.unit]||1) * m / 60 * p;
+}
+function perPerson(t){
+  const q = Math.max(0, Number(t.qty)||0), m = Math.max(0, Number(t.min)||0);
+  return q * (UNIT_TO_WEEK[t.unit]||1) * m / 60;
+}
+function compute(src){
+  src = src || S;
+  const df = DATA_FACTOR[src.org.infos] || 0.9;
+  const rows = Object.entries(src.tasks).filter(([,v]) => v.on).map(([id,v]) => {
+    const def = T[id], h = weekly(v);
+    const p = Math.max(1, Number(v.people)||1);
+    const lo = h*def.share*df*REAL_LOW, hi = h*def.share*df*REAL_HIGH;
+    return { id, def, v, h, lo, hi, p, name: id === "autre" && (v.desc||"").trim() ? v.desc.trim() : def.short, loSolo:lo/p, hiSolo:hi/p };
+  }).sort((a,b) => b.hi - a.hi);
+  const sum = k => rows.reduce((a,r) => a + r[k], 0);
+  const h = sum("h"), lo = sum("lo"), hi = sum("hi");
+  const multiRows = rows.filter(r => r.p > 1);
+  const people = Math.max(1, ...rows.map(r => Number(r.v.people)||1));
+  const maxPerPerson = rows.reduce((a,r) => a + perPerson(r.v), 0);
+  return { rows, h, lo, hi, df,
+    yearLo: lo*WEEKS_PER_YEAR, yearHi: hi*WEEKS_PER_YEAR,
+    daysLo: lo*WEEKS_PER_YEAR/HOURS_PER_DAY, daysHi: hi*WEEKS_PER_YEAR/HOURS_PER_DAY,
+    hYear: h*WEEKS_PER_YEAR, maxPerPerson, people,
+    multi: multiRows.length > 0, multiRows, loSolo: sum("loSolo"), hiSolo: sum("hiSolo"), hSolo: rows.reduce((a,r) => a + r.h/r.p, 0) };
+}
+
+/* ============================================================
+   FORMATS
+   ============================================================ */
+const nf = new Intl.NumberFormat("fr-FR");
+function fmtH(h, step){
+  step = step || 5;
+  const m = Math.round(h*60/step)*step;
+  if (m < 60) return m + " min";
+  const hh = Math.floor(m/60), mm = m % 60;
+  return hh + " h" + (mm ? " " + String(mm).padStart(2,"0") : "");
+}
+const fmtRange = (a,b) => fmtH(a,10) === fmtH(b,10) ? fmtH(a,10) : fmtH(a,10) + " à " + fmtH(b,10);
+const round10 = x => Math.round(x/10)*10;
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $ = s => document.querySelector(s);
+
+function toast(msg){
+  const d = document.createElement("div"); d.className = "toast"; d.textContent = msg; d.setAttribute("role","status");
+  document.body.appendChild(d); setTimeout(() => d.remove(), 2600);
+}
+function copyText(text, fallbackEl){
+  const done = () => toast("Copié dans le presse-papiers");
+  const fail = () => {
+    if (fallbackEl){ fallbackEl.focus(); fallbackEl.select(); toast("Texte sélectionné : faites Copier"); }
+    else toast("Copie impossible ici. Sélectionnez le texte à la main.");
+  };
+  try { navigator.clipboard.writeText(text).then(done, fail); } catch(e){ fail(); }
+}
+
+/* ============================================================
+   EXEMPLE DU BANDEAU (même moteur que le diagnostic)
+   ============================================================ */
+const EXAMPLES = [
+  { metier:"Commercial B2B", infos:"Dans des fichiers dispersés",
+    titre:"Le commercial qui cherche ses prospects dans les fichiers de toute l'équipe",
+    situation:"Chacun a son Excel, les doublons sont partout et personne ne sait qui a déjà appelé qui.",
+    agent:"Rassemble les fichiers de l'équipe, supprime les doublons, qualifie chaque prospect selon ses critères et prépare le premier message. Le lundi matin, sa liste est prête.",
+    plus:"Plus aucun prospect contacté deux fois par deux collègues.",
+    tasks:{ prospection:[40,"semaine",8], saisie:[30,"semaine",4], relance:[15,"semaine",6], reunion:[8,"semaine",15], recherche:[20,"semaine",6] } },
+  { metier:"Plombier à son compte", infos:"Dans des fichiers dispersés",
+    titre:"Le plombier qui ne peut pas décrocher quand il est sous un évier",
+    situation:"Les appels tombent en pleine intervention. Le soir, il rappelle, cale les rendez-vous et oublie la moitié des devis.",
+    agent:"Répond à chaque appel, repère les urgences, propose un créneau dans son agenda et lui envoie un résumé par SMS entre deux chantiers.",
+    plus:"Le client qui n'aurait jamais rappelé repart avec un rendez-vous.",
+    tasks:{ appel:[50,"semaine",5], rdv:[20,"semaine",5], doc:[5,"semaine",30], relance:[8,"semaine",6], saisie:[15,"semaine",6] } },
+  { metier:"Artisan menuisier", infos:"Dans des fichiers dispersés",
+    titre:"L'artisan qui passe ses soirées à taper ses devis",
+    situation:"Mesures notées sur un carnet, tarifs fournisseurs à retrouver, devis rédigé le soir. Le client attend une semaine.",
+    agent:"Il dicte ses mesures en sortant du chantier. Le devis est rédigé avec ses prix et ses modèles, prêt à relire avant même qu'il arrive au chantier suivant.",
+    plus:"Le devis part le jour même, pendant que le client est encore décidé.",
+    tasks:{ doc:[6,"semaine",60], relance:[10,"semaine",6], saisie:[15,"semaine",5], rdv:[10,"semaine",5], recherche:[15,"semaine",5] } },
+  { metier:"Chargée de communication", infos:"Dans des outils bien rangés",
+    titre:"La salariée qui gère les réseaux sociaux en plus de son poste",
+    situation:"Une idée de publication le lundi, en ligne le jeudi si tout va bien. Les messages et commentaires attendent.",
+    agent:"Prépare un mois de publications dans le ton de la marque, décline chaque post pour LinkedIn, Instagram et Facebook, et propose une réponse aux messages.",
+    plus:"Une présence régulière, sans y laisser ses soirées.",
+    tasks:{ contenu:[5,"semaine",60], email:[40,"semaine",3], reporting:[4,"mois",90], reunion:[3,"semaine",20] } },
+  { metier:"Boutique de carrelage", infos:"Dans des fichiers dispersés",
+    titre:"La boutique où les clients n'arrivent pas à se projeter",
+    situation:"Les clients hésitent entre trois références, reviennent deux fois avec leurs échantillons. Les vendeurs refont les calculs de surface à la main.",
+    agent:"Le client envoie une photo de sa pièce et voit le carrelage posé, avec les quantités et un devis indicatif. Le vendeur reprend la main pour conclure.",
+    plus:"Une décision plus rapide et une commande calculée au carreau près.",
+    tasks:{ doc:[15,"semaine",25], appel:[30,"semaine",5], rdv:[15,"semaine",5], relance:[10,"semaine",6] } }
+];
+
+let slide = 0;
+function exampleResult(ex){
+  const st = blank(); st.org.infos = ex.infos;
+  Object.entries(ex.tasks).forEach(([id,[qty,unit,min]]) => { st.tasks[id] = { on:true, qty, unit, min, people:1 }; });
+  return compute(st);
+}
+function renderCarousel(){
+  const week = 38.9;
+  $("#slides").innerHTML = EXAMPLES.map((ex,i) => {
+    const r = exampleResult(ex);
+    return `<article class="slide" id="slide-${i}" role="group" aria-roledescription="diapositive" aria-label="Exemple ${i+1} sur ${EXAMPLES.length} : ${esc(ex.metier)}">
+      <span class="week-tag">Exemple ${i+1}/${EXAMPLES.length} · ${esc(ex.metier)}</span>
+      <h3>${esc(ex.titre)}</h3>
+      <p class="sl-sit">${esc(ex.situation)}</p>
+      <div class="sl-nums">
+        <div><div class="week-num">${fmtH(r.h)}</div><p class="week-cap">de tâches répétitives chaque semaine</p></div>
+        <div class="sl-gain"><p class="pre">jusqu'à</p><div class="week-num">${fmtH(r.hi,10)}</div><p class="week-cap">rendues par l'agent</p></div>
+      </div>
+      <div class="bar" role="img" aria-label="${fmtH(r.h)} de tâches répétitives, dont jusqu'à ${fmtH(r.hi,10)} rendues par l'agent, soit ${Math.round(r.hi/r.h*100)} %">
+        <i class="b-rep" style="width:100%"></i><i class="b-gain" style="width:${(r.hi/r.h*100).toFixed(1)}%"></i>
+      </div>
+      <p class="bar-cap"><b>${Math.round(r.hi/r.h*100)} %</b> de ce temps rendu à l'équipe</p>
+      <div class="sl-agent">
+        <p class="k">Avec son agent</p>
+        <p>${esc(ex.agent)}</p>
+        <p class="plus">${esc(ex.plus)}</p>
+      </div>
+      <div class="week-rows">
+        <div><span>Sur une année</span><b>jusqu'à ${Math.round(r.daysHi)} jours, soit ${(r.daysHi/22).toFixed(1).replace(".",",")} mois de travail</b></div>
+        <div><span>Fourchette prudente</span><b>${fmtRange(r.lo, r.hi)} / sem.</b></div>
+      </div>
+    </article>`;
+  }).join("");
+  $("#dots").innerHTML = EXAMPLES.map((ex,i) => `<button type="button" class="dot" role="tab" data-slide="${i}" aria-label="Exemple ${i+1} : ${esc(ex.metier)}"><i></i></button>`).join("");
+  showSlide(0);
+}
+function showSlide(n){
+  slide = (n + EXAMPLES.length) % EXAMPLES.length;
+  document.querySelectorAll(".slide").forEach((el,i) => {
+    const on = i === slide;
+    el.classList.toggle("on", on);
+    el.setAttribute("aria-hidden", String(!on));
+    if (on) el.removeAttribute("inert"); else el.setAttribute("inert", "");
+  });
+  document.querySelectorAll(".dot").forEach((d,i) => {
+    d.classList.remove("on"); d.setAttribute("aria-selected", String(i === slide));
+    if (i === slide){ void d.offsetWidth; d.classList.add("on"); } // relance la minuterie de 2 minutes
+  });
+}
+// La barre de progression du point actif dure 2 minutes ; à sa fin, on passe à l'exemple suivant.
+$("#dots").addEventListener("animationend", e => { if (e.target.closest(".dot.on")) showSlide(slide + 1); });
+$("#dots").addEventListener("click", e => { const d = e.target.closest("[data-slide]"); if (d) showSlide(Number(d.dataset.slide)); });
+$("#carPrev").addEventListener("click", () => showSlide(slide - 1));
+$("#carNext").addEventListener("click", () => showSlide(slide + 1));
+$("#carPause").addEventListener("click", e => {
+  const c = $("#carousel"), paused = !c.classList.contains("paused");
+  c.classList.toggle("paused", paused);
+  const b = e.currentTarget; b.setAttribute("aria-pressed", String(paused));
+  b.setAttribute("aria-label", paused ? "Reprendre le défilement" : "Mettre en pause le défilement");
+});
+(function swipe(){
+  let x0 = null; const el = $("#slides");
+  el.addEventListener("pointerdown", e => { x0 = e.clientX; });
+  el.addEventListener("pointerup", e => {
+    if (x0 === null) return; const dx = e.clientX - x0; x0 = null;
+    if (Math.abs(dx) > 50) showSlide(slide + (dx < 0 ? 1 : -1));
+  });
+})();
+$("#carousel").addEventListener("keydown", e => {
+  if (e.key === "ArrowRight") showSlide(slide + 1);
+  if (e.key === "ArrowLeft") showSlide(slide - 1);
+});
+
+/* ============================================================
+   NAVIGATION ENTRE SITE ET DIAGNOSTIC
+   ============================================================ */
+function route(){
+  const d = location.hash === "#diagnostic";
+  $("#site").hidden = d; $("#diag").hidden = !d;
+  if (d){ renderStep(); window.scrollTo(0,0); }
+}
+window.addEventListener("hashchange", route);
+$("#backSite").addEventListener("click", () => { location.hash = "accueil"; });
+
+/* ============================================================
+   ÉTAPES
+   ============================================================ */
+const STEPS = [
+  { t:"Votre entreprise", render:stepContact, valid:validContact },
+  { t:"Vos tâches", render:stepTasks, valid:validTasks },
+  { t:"Votre organisation", render:stepOrg, valid:() => true },
+  { t:"Votre priorité", render:stepPrio, valid:() => true },
+  { t:"Votre résultat", render:stepResult, valid:() => true }
+];
+
+function otherInput(path, show){
+  return `<input class="inp other-inp" id="o-${path.replace(".","-")}" data-f="${path}Autre" data-other-for="${path}" value="${esc(getPath(path+"Autre")||"")}" placeholder="Précisez…" aria-label="Précisez" ${show?"":"hidden"}>`;
+}
+function hasOtherSelected(path){
+  const v = getPath(path);
+  return Array.isArray(v) ? v.includes("Autre") : v === "Autre";
+}
+function toggleOther(path, focus){
+  const i = document.querySelector(`[data-other-for="${path}"]`); if (!i) return;
+  i.hidden = !hasOtherSelected(path);
+  if (!i.hidden && focus) i.focus();
+}
+function withOther(path){ // valeur lisible pour le récapitulatif
+  const v = getPath(path), o = (getPath(path+"Autre")||"").trim();
+  const f = x => x === "Autre" && o ? "Autre (" + o + ")" : x;
+  return Array.isArray(v) ? v.map(f).join(", ") : f(v||"");
+}
+function chips(path, options, multi){
+  const cur = getPath(path);
+  const other = options.includes("Autre");
+  return `<div class="chips" role="group">${options.map(o => {
+    const on = multi ? (cur||[]).includes(o) : cur === o;
+    return `<button type="button" class="chip" data-chip="${path}" data-val="${esc(o)}" ${multi?'data-multi="1"':""} aria-pressed="${on}">${esc(o)}</button>`;
+  }).join("")}</div>${other ? otherInput(path, hasOtherSelected(path)) : ""}`;
+}
+function taskName(id, v){ v = v || S.tasks[id] || {}; return id === "autre" && (v.desc||"").trim() ? v.desc.trim() : T[id].short; }
+const SUGGESTIONS_AUTRE = ["Préparer des propositions commerciales","Analyser les avis et retours clients","Synthétiser des questionnaires de satisfaction","Répondre aux avis en ligne","Rédiger des fiches produits ou descriptifs","Préparer des supports de présentation","Préparer des newsletters","Accueillir un nouveau collaborateur","Mettre à jour les procédures internes","Traduire des documents ou messages","Mettre à jour un planning d'équipe","Suivre les commandes fournisseurs"];
+function getPath(p){ return p.split(".").reduce((o,k) => o && o[k], S); }
+function setPath(p, v){ const ks = p.split("."); let o = S; ks.slice(0,-1).forEach(k => o = o[k]); o[ks[ks.length-1]] = v; }
+
+function field(path, label, opts){
+  opts = opts || {};
+  const v = esc(getPath(path)), id = "f-" + path.replace(".","-");
+  const opt = opts.optional ? ' <span class="opt">(facultatif)</span>' : "";
+  const input = opts.select
+    ? `<select class="inp" id="${id}" data-f="${path}"><option value="">Choisir…</option>${opts.select.map(s => `<option ${getPath(path)===s?"selected":""}>${esc(s)}</option>`).join("")}</select>`
+    : `<input class="inp" id="${id}" data-f="${path}" type="${opts.type||"text"}" value="${v}" autocomplete="${opts.ac||"off"}" ${opts.ph?`placeholder="${esc(opts.ph)}"`:""}>`;
+  const other = opts.select && opts.select.includes("Autre") ? otherInput(path, hasOtherSelected(path)) : "";
+  return `<div class="field ${opts.full?"full":""}"><label for="${id}">${label}${opt}</label>${input}${other}<span class="err-msg" data-err="${path}" hidden></span></div>`;
+}
+
+function stepContact(){
+  return `<h2>Faisons connaissance.</h2>
+  <p class="intro">Ces informations me permettent de vous recontacter avec un diagnostic qui vous ressemble.</p>
+  <div class="panel">
+    <div class="fields">
+      ${field("contact.prenom","Prénom",{ac:"given-name"})}
+      ${field("contact.nom","Nom",{ac:"family-name"})}
+      ${field("contact.entreprise","Entreprise",{ac:"organization", full:true})}
+      ${field("contact.email","Email professionnel",{type:"email", ac:"email"})}
+      ${field("contact.tel","Téléphone",{type:"tel", ac:"tel", optional:true})}
+      ${field("contact.secteur","Secteur d'activité",{select:SECTEURS, full:true})}
+    </div>
+    <div class="q" style="margin-top:28px;padding-top:28px;border-top:1px solid var(--line)">
+      <p class="q-l">Combien êtes-vous dans l'entreprise ?</p>
+      ${chips("contact.effectif", ["Seul(e)","2 à 5","6 à 20","21 à 50","Plus de 50"])}
+    </div>
+    <div class="q">
+      <p class="q-l">Votre rôle</p>
+      ${chips("contact.role", ["Dirigeant(e)","Manager","Indépendant(e)","Assistant(e) ou office manager","Autre"])}
+    </div>
+  </div>`;
+}
+function validContact(){
+  const c = S.contact, errs = {};
+  if (!c.prenom.trim()) errs["contact.prenom"] = "Indiquez votre prénom.";
+  if (!c.entreprise.trim()) errs["contact.entreprise"] = "Indiquez le nom de votre entreprise.";
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(c.email.trim())) errs["contact.email"] = "Vérifiez l'adresse : elle doit ressembler à nom@entreprise.fr.";
+  document.querySelectorAll("[data-err]").forEach(e => { const m = errs[e.dataset.err]; e.hidden = !m; e.textContent = m||""; });
+  document.querySelectorAll("[data-f]").forEach(i => i.classList.toggle("err", !!errs[i.dataset.f]));
+  const first = Object.keys(errs)[0];
+  if (first){ const i = document.querySelector(`[data-f="${first}"]`); i && i.focus(); return false; }
+  return true;
+}
+
+function taskCard(def){
+  const v = S.tasks[def.id];
+  const on = !!(v && v.on);
+  const h = on ? weekly(v) : 0;
+  const descBlock = def.id === "autre" && on ? `
+      <div class="field span-all"><label for="d-autre">De quelle tâche s'agit-il ?</label>
+        <input class="inp" id="d-autre" type="text" value="${esc(v.desc||"")}" data-t="autre" data-k="desc" placeholder="Décrivez-la en quelques mots, ou choisissez ci-dessous">
+        <div class="chips sugg" role="group" aria-label="Exemples de tâches">${SUGGESTIONS_AUTRE.map(s => `<button type="button" class="chip" data-sugg="${esc(s)}" aria-pressed="${(v.desc||"") === s}">${esc(s)}</button>`).join("")}</div>
+      </div>` : "";
+  const body = on ? `
+    <div class="task-body">${descBlock}
+      <div class="field f-qty"><label for="q-${def.id}">Combien de ${esc(def.what)} ?</label>
+        <div class="qty-row">
+          <input class="inp" id="q-${def.id}" type="number" min="0" step="1" inputmode="numeric" value="${esc(v.qty)}" data-t="${def.id}" data-k="qty">
+          <select class="inp" id="u-${def.id}" data-t="${def.id}" data-k="unit" aria-label="Fréquence">
+            ${["jour","semaine","mois"].map(u => `<option value="${u}" ${v.unit===u?"selected":""}>par ${u}</option>`).join("")}
+          </select>
+        </div></div>
+      <div class="field"><label for="m-${def.id}">Minutes à chaque fois</label>
+        <input class="inp" id="m-${def.id}" type="number" min="0" step="1" inputmode="numeric" value="${esc(v.min)}" data-t="${def.id}" data-k="min"></div>
+      <div class="field"><label for="p-${def.id}">Personnes concernées</label>
+        <input class="inp" id="p-${def.id}" type="number" min="1" step="1" inputmode="numeric" value="${esc(v.people)}" data-t="${def.id}" data-k="people"></div>
+      <p class="hint">Valeurs de départ indicatives. Remplacez-les par les vôtres : une estimation juste vaut mieux qu'un gros chiffre.</p>
+    </div>` : "";
+  return `<div class="task ${on?"on":""}" data-task="${def.id}">
+    <button type="button" class="task-top" data-toggle="${def.id}" aria-expanded="${on}">
+      <span class="tick" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5l2.6 2.6L11 4.5"/></svg></span>
+      <span class="task-name">${esc(def.label)}</span>
+      <span class="task-h" data-h="${def.id}">${on ? taskHours(v) : ""}</span>
+    </button>${body}</div>`;
+}
+function taskHours(v){
+  const p = Math.max(1, Number(v.people)||1);
+  return fmtH(weekly(v)) + " / sem." + (p > 1 ? " · " + p + " pers." : "");
+}
+function stepTasks(){
+  return `<h2>Qu'est-ce qui revient sans cesse ?</h2>
+  <p class="intro">Cochez les tâches qui prennent du temps chaque semaine, puis indiquez combien de fois et combien de minutes. Le calcul part de ces volumes, pas d'une estimation globale.</p>
+  <div class="tasks">${TASKS.map(taskCard).join("")}</div>
+  <div id="taskWarn"></div>`;
+}
+function validTasks(){
+  const n = Object.values(S.tasks).filter(v => v.on && weekly(v) > 0).length;
+  if (!n){ $("#taskWarn").innerHTML = `<div class="warn-box">Cochez au moins une tâche et indiquez son volume pour obtenir votre résultat.</div>`; return false; }
+  const a = S.tasks.autre;
+  if (a && a.on && !(a.desc||"").trim()){
+    $("#taskWarn").innerHTML = `<div class="warn-box">Précisez de quelle autre tâche il s'agit : écrivez-la ou choisissez un exemple.</div>`;
+    const i = $("#d-autre"); i && i.focus(); return false;
+  }
+  return true;
+}
+function taskWarning(){
+  const r = compute(), el = $("#taskWarn"); if (!el) return;
+  el.innerHTML = r.maxPerPerson > 30
+    ? `<div class="warn-box">Vous indiquez environ ${fmtH(r.maxPerPerson)} par semaine et par personne sur ces tâches, soit plus des trois quarts d'une semaine de 39 h. Vérifiez les volumes : le chiffre sera de toute façon recalé ensemble pendant l'immersion.</div>`
+    : "";
+}
+
+function stepOrg(){
+  return `<h2>Comment travaillez-vous aujourd'hui ?</h2>
+  <p class="intro">Ces réponses ajustent le calcul et me permettent de préparer notre premier échange.</p>
+  <div class="panel">
+    <div class="q"><p class="q-l">Où se trouvent les informations utiles à ces tâches ?</p>
+      <p class="hint">Plus elles sont dispersées, plus l'agent demande de préparation : le calcul en tient compte.</p>
+      ${chips("org.infos", Object.keys(DATA_FACTOR))}</div>
+    <div class="q"><p class="q-l">Vos outils du quotidien <span class="opt">(plusieurs choix possibles)</span></p>
+      ${chips("org.outils", ["Gmail","Outlook","Google Drive / Docs","Microsoft 365","Excel ou Google Sheets","Un CRM","Un logiciel métier","Notion","WhatsApp","Surtout du papier","Autre"], true)}</div>
+    <div class="q"><p class="q-l">Utilisez-vous déjà l'IA ?</p>
+      ${chips("org.ia", ["Pas encore","Un peu, chacun de son côté","Oui, régulièrement"])}</div>
+    <div class="q"><p class="q-l">Ces tâches touchent-elles des données sensibles ?</p>
+      <p class="hint">Cela ne bloque rien : la confidentialité est cadrée avant toute mise en place.</p>
+      ${chips("org.sensible", ["Non","Données clients courantes","Données de santé ou réglementées","Je ne sais pas"])}</div>
+  </div>`;
+}
+
+function stepPrio(){
+  const chosen = Object.entries(S.tasks).filter(([,v]) => v.on).map(([id]) => taskName(id));
+  return `<h2>Par où commencer ?</h2>
+  <p class="intro">Un agent à la fois : votre réponse décide du premier.</p>
+  <div class="panel">
+    <div class="q"><p class="q-l">Si une seule tâche disparaissait demain, laquelle choisiriez-vous ?</p>
+      ${chips("prio.tache", chosen.length ? chosen : ["Je ne sais pas encore"])}</div>
+    <div class="q"><div class="field full"><label for="f-prio-reussite">À quoi verriez-vous que c'est réussi ? <span class="opt">(facultatif)</span></label>
+      <textarea class="inp" id="f-prio-reussite" data-f="prio.reussite" placeholder="Par exemple : ne plus traiter mes mails le soir, répondre aux clients dans la journée…">${esc(S.prio.reussite)}</textarea></div></div>
+    <div class="q"><p class="q-l">Quand puis-je vous appeler ? <span class="opt">(facultatif)</span></p>
+      ${chips("prio.dispo", ["En matinée","En début d'après-midi","En fin de journée","Plutôt par email"], true)}</div>
+    <div class="q"><div class="field full"><label for="f-prio-message">Un mot pour Diane <span class="opt">(facultatif)</span></label>
+      <textarea class="inp" id="f-prio-message" data-f="prio.message">${esc(S.prio.message)}</textarea></div></div>
+  </div>`;
+}
+
+function stepResult(){
+  const r = compute();
+  if (!r.rows.length) return `<h2>Il manque vos tâches.</h2><p class="intro">Revenez à l'étape « Vos tâches » pour en cocher au moins une.</p>`;
+  const max = Math.max(...r.rows.map(x => x.h));
+  const pct = x => (x/max*100).toFixed(1) + "%";
+  const name = esc(S.contact.prenom || "");
+  const bars = r.rows.map(x => `
+    <div role="img" aria-label="${esc(x.name)} : ${fmtH(x.h)} par semaine aujourd'hui${x.p>1?", pour "+x.p+" personnes":""}, ${fmtRange(x.lo,x.hi)} récupérables">
+      <div class="row-top"><b>${esc(x.name)}${x.p>1?` <em class="ppl">${x.p} personnes</em>`:""}</b><span>${fmtRange(x.lo,x.hi)} sur ${fmtH(x.h)}</span></div>
+      <div class="rbar"><i class="cur" style="width:${pct(x.h)}"></i><i class="hi" style="width:${pct(x.hi)}"></i><i class="lo" style="width:${pct(x.lo)}"></i></div>
+    </div>`).join("");
+  const top = r.rows.slice(0,3).map((x,i) => `<div class="agent"><span class="n">${i+1}</span><div><b>${esc(x.name)}</b><p>${esc(x.def.agent)}</p></div></div>`).join("");
+  const tbl = r.rows.map(x => `<tr><td>${esc(x.name)}</td><td class="n">${Math.round(x.def.share*100)} %</td><td>${esc(x.def.basis)}</td></tr>`).join("");
+  const dfTxt = r.df === 1 ? "aucune réduction" : "× " + String(r.df).replace(".",",");
+  return `<h2>${name ? name + ", voici" : "Voici"} votre temps récupérable.</h2>
+  <p class="intro">Une estimation prudente, calculée à partir de vos volumes et de moyennes publiées. Elle sera vérifiée ensemble, puis mesurée pendant le pilote.</p>
+
+  <div class="res-hero">
+    <p class="res-k">Temps qu'un agent pourrait vous rendre</p>
+    <p class="res-v">${fmtRange(r.lo, r.hi)}<small>par semaine${r.multi ? ", cumulé pour toutes les personnes concernées" : ""}, une fois l'agent en rythme (après environ deux mois de rodage)</small></p>
+    <div class="res-kpis">
+      <div><div class="v">${fmtH(r.h)}</div><div class="k">passées aujourd'hui chaque semaine sur ces tâches${r.multi ? ", toutes personnes confondues" : ""}</div></div>
+      <div><div class="v">${nf.format(round10(r.yearLo))} à ${nf.format(round10(r.yearHi))} h</div><div class="k">récupérables par an, sur ${WEEKS_PER_YEAR} semaines travaillées</div></div>
+      <div><div class="v">${Math.round(r.daysLo)} à ${Math.round(r.daysHi)} jours</div><div class="k">de travail rendus par an, à ${String(HOURS_PER_DAY).replace(".",",")} h par jour</div></div>
+    </div>
+  </div>
+
+  ${r.multi ? `<div class="notice"><b>Ce résultat additionne le temps de plusieurs personnes.</b>
+    <p>Vous avez indiqué plusieurs personnes pour ${r.multiRows.map(x => esc(x.name) + " (" + x.p + " personnes)").join(", ")}. Le temps de chacune s'ajoute, ce qui augmente le total.</p>
+    <p>Ramené à une seule personne par tâche : ${fmtH(r.hSolo)} par semaine aujourd'hui, dont ${fmtRange(r.loSolo, r.hiSolo)} récupérables.</p></div>` : ""}
+
+  <div class="panel">
+    <h3>Tâche par tâche</h3>
+    <p class="sub">Du plus gros gain au plus petit. La barre grise représente le temps passé aujourd'hui.</p>
+    <div class="rows">${bars}</div>
+    <div class="rlegend"><span style="--sw:var(--line-strong)">Temps actuel</span><span style="--sw:var(--blue)">Gain prudent</span><span style="--sw:var(--blue);--op:.4">Gain probable</span></div>
+  </div>
+
+  <div class="panel">
+    <h3>Ce que votre agent prendrait en charge en premier</h3>
+    <div class="agent-list">${top}</div>
+  </div>
+
+  <div class="panel method">
+    <details>
+      <summary>Comment ce chiffre est calculé</summary>
+      <div class="method-body">
+        <p><b>1. Votre temps actuel.</b> Volume × minutes × nombre de personnes concernées, ramené à la semaine (un mois compte ${(WEEKS_PER_YEAR/12).toFixed(1).replace(".",",")} semaines travaillées).</p>
+        <p><b>2. La part qu'un agent peut prendre.</b> Un taux propre à chaque tâche, jamais 100 % :</p>
+        <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Tâche</th><th>Part prise en charge</th><th>Justification</th></tr></thead><tbody>${tbl}</tbody></table></div>
+        <p><b>3. L'état de vos informations.</b> ${esc(S.org.infos || "Non renseigné, hypothèse de fichiers dispersés")} : ${dfTxt}.</p>
+        <p><b>4. Le temps de relecture.</b> On ne garde que 60 % (prudent) à 85 % (probable) du gain théorique. Selon Workday (2025), près de 40 % du temps gagné avec l'IA est reperdu à corriger quand l'outil est mal cadré.</p>
+        <p><b>5. L'année.</b> ${WEEKS_PER_YEAR} semaines travaillées et ${String(HOURS_PER_DAY).replace(".",",")} h par jour, d'après l'Insee : 1 664 h effectives par an pour 38,9 h par semaine chez les salariés à temps complet.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="send" id="sendBox">
+    <h3>Envoyez votre diagnostic à Diane.</h3>
+    <p>Je l'étudie et je reviens vers vous pour un premier échange, gratuit et sans engagement.</p>
+    <label class="consent" for="consent"><input type="checkbox" id="consent" ${S.consent?"checked":""}> J'accepte que Diane utilise ces informations pour me recontacter au sujet de ce diagnostic.</label>
+    <div class="send-actions">
+      <a class="btn btn-primary btn-lg ${S.consent?"":"is-off"}" id="mailBtn" href="#" target="_blank" rel="noopener" aria-disabled="${!S.consent}">Ouvrir ma messagerie</a>
+      <button class="btn btn-quiet btn-lg" type="button" id="copyRecap" ${S.consent?"":"disabled"}>Copier le diagnostic</button>
+    </div>
+    <div class="addr">Adresse de Diane : <code>diane.barbat.pro@gmail.com</code> <button class="btn btn-quiet btn-sm" type="button" data-copy="diane.barbat.pro@gmail.com">Copier l'adresse</button></div>
+    <p class="hint" style="margin-top:12px">Le bouton ouvre votre messagerie avec le message déjà rédigé : il ne reste qu'à cliquer sur Envoyer. Si rien ne s'ouvre, copiez le diagnostic et collez-le dans un email à l'adresse ci-dessus.</p>
+    <details class="recap"><summary>Voir le message</summary><textarea id="recapText" readonly aria-label="Récapitulatif du diagnostic"></textarea></details>
+  </div>
+  <div class="restart" id="restartBox">${restartIdle()}</div>`;
+}
+
+function restartIdle(){ return `<button class="btn btn-quiet btn-lg" type="button" id="restartBtn">Refaire mon diagnostic</button>`; }
+function restartAsk(){ return `<p>Toutes vos réponses seront effacées.</p><div class="send-actions" style="margin-top:12px;justify-content:center"><button class="btn btn-primary" type="button" id="restartYes">Oui, tout recommencer</button><button class="btn btn-quiet" type="button" id="restartNo">Annuler</button></div>`; }
+
+/* ---------- récapitulatif envoyé par email ---------- */
+function recap(){
+  const r = compute(), c = S.contact, o = S.org, p = S.prio;
+  const L = [];
+  L.push("Bonjour Diane,", "", "Voici mon diagnostic réalisé sur votre site.", "");
+  L.push("CONTACT");
+  L.push("Nom : " + [c.prenom, c.nom].filter(Boolean).join(" "));
+  L.push("Entreprise : " + c.entreprise + (c.secteur ? " (" + withOther("contact.secteur") + ")" : ""));
+  if (c.effectif) L.push("Effectif : " + c.effectif);
+  if (c.role) L.push("Rôle : " + withOther("contact.role"));
+  L.push("Email : " + c.email + (c.tel ? " · Tél. : " + c.tel : ""), "");
+  L.push("TÂCHES RÉPÉTITIVES");
+  r.rows.forEach(x => {
+    const ppl = Number(x.v.people) > 1 ? ", " + x.v.people + " pers." : "";
+    L.push("- " + x.name + " : " + x.v.qty + " par " + x.v.unit + " × " + x.v.min + " min" + ppl + " = " + fmtH(x.h) + "/sem.");
+  });
+  L.push("Total aujourd'hui : " + fmtH(r.h) + " par semaine" + (r.multi ? ", toutes personnes confondues" : ""));
+  if (r.multi) L.push("Plusieurs personnes indiquées pour : " + r.multiRows.map(x => x.name + " (" + x.p + ")").join(", ") + ". Ramené à une personne par tâche : " + fmtH(r.hSolo) + " par semaine.");
+  L.push("");
+  L.push("TEMPS RÉCUPÉRABLE ESTIMÉ");
+  L.push(fmtRange(r.lo, r.hi) + " par semaine" + (r.multi ? " (cumulé ; " + fmtRange(r.loSolo, r.hiSolo) + " ramené à une personne par tâche)" : ""));
+  L.push(nf.format(round10(r.yearLo)) + " à " + nf.format(round10(r.yearHi)) + " h par an, soit " + Math.round(r.daysLo) + " à " + Math.round(r.daysHi) + " jours de travail", "");
+  L.push("ORGANISATION");
+  L.push("Informations : " + (o.infos || "non précisé"));
+  if (o.outils.length) L.push("Outils : " + withOther("org.outils"));
+  if (o.ia) L.push("Usage de l'IA : " + o.ia);
+  if (o.sensible) L.push("Données sensibles : " + o.sensible);
+  L.push("", "PRIORITÉ");
+  L.push("Première tâche à traiter : " + (p.tache || "non précisée"));
+  if (p.reussite) L.push("Réussite : " + p.reussite);
+  if (p.dispo.length) L.push("Disponibilités : " + p.dispo.join(", "));
+  if (p.message) L.push("", "MESSAGE", p.message);
+  L.push("", "Bien à vous,", [c.prenom, c.nom].filter(Boolean).join(" "));
+  return L.join("\n");
+}
+function refreshSend(){
+  const box = $("#sendBox"); if (!box) return;
+  const text = recap();
+  $("#recapText").value = text;
+  const subject = "Diagnostic temps récupérable — " + (S.contact.entreprise || "mon entreprise");
+  $("#mailBtn").href = "mailto:diane.barbat.pro@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(text);
+}
+
+/* ---------- rendu général ---------- */
+function updateDock(){
+  const r = compute();
+  $("#dockLive").innerHTML = step === STEPS.length - 1
+    ? `<div class="k">Temps récupérable</div><div class="v">${r.rows.length ? fmtRange(r.lo,r.hi) : "–"} <small>/ sem.</small></div>`
+    : `<div class="k">Aujourd'hui sur ces tâches${r.multi ? ", toutes personnes" : ""}</div><div class="v">${fmtH(r.h)} <small>/ semaine</small></div>`;
+}
+function renderStep(){
+  $("#progress").innerHTML = STEPS.map((_,i) => `<i class="${i<=step?"on":""}"></i>`).join("");
+  $("#stepMeta").textContent = "Étape " + (step+1) + " sur " + STEPS.length + " · " + STEPS[step].t;
+  $("#diagBody").innerHTML = STEPS[step].render();
+  $("#prevBtn").hidden = step === 0;
+  $("#nextBtn").hidden = step === STEPS.length - 1;
+  $("#nextBtn").textContent = step === STEPS.length - 2 ? "Voir mon résultat" : "Continuer";
+  if (step === 1) taskWarning();
+  refreshSend();
+  updateDock();
+}
+function go(n){ step = Math.max(0, Math.min(STEPS.length-1, n)); renderStep(); window.scrollTo({top:0, behavior:"smooth"}); }
+
+$("#nextBtn").addEventListener("click", () => { if (STEPS[step].valid()) { save(); go(step+1); } });
+$("#prevBtn").addEventListener("click", () => go(step-1));
+
+/* ---------- délégation des événements ---------- */
+const body = $("#diagBody");
+body.addEventListener("input", e => {
+  const f = e.target.dataset.f;
+  if (f){ setPath(f, e.target.value); e.target.classList.remove("err"); if (e.target.tagName === "SELECT") toggleOther(f, true); save(); refreshSend(); return; }
+  const id = e.target.dataset.t, k = e.target.dataset.k;
+  if (id && k){
+    S.tasks[id][k] = k === "unit" ? e.target.value : e.target.value;
+    const span = body.querySelector(`[data-h="${id}"]`); if (span) span.textContent = taskHours(S.tasks[id]);
+    if (k === "desc") body.querySelectorAll("[data-sugg]").forEach(c => c.setAttribute("aria-pressed", String(c.dataset.sugg === e.target.value)));
+    save(); updateDock(); taskWarning();
+  }
+});
+body.addEventListener("change", e => { if (e.target.dataset.t || e.target.dataset.f) e.target.dispatchEvent(new Event("input", {bubbles:true})); });
+body.addEventListener("click", e => {
+  const chip = e.target.closest("[data-chip]");
+  if (chip){
+    const p = chip.dataset.chip, v = chip.dataset.val;
+    if (chip.dataset.multi){
+      const arr = getPath(p) || []; const i = arr.indexOf(v);
+      i >= 0 ? arr.splice(i,1) : arr.push(v); setPath(p, arr);
+      chip.setAttribute("aria-pressed", String(i < 0));
+    } else {
+      const same = getPath(p) === v; setPath(p, same ? "" : v);
+      chip.parentElement.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", String(!same && c === chip)));
+    }
+    toggleOther(p, v === "Autre");
+    save(); updateDock(); refreshSend(); return;
+  }
+  const sg = e.target.closest("[data-sugg]");
+  if (sg){
+    S.tasks.autre.desc = sg.dataset.sugg; const i = $("#d-autre"); if (i) i.value = sg.dataset.sugg;
+    body.querySelectorAll("[data-sugg]").forEach(c => c.setAttribute("aria-pressed", String(c === sg)));
+    $("#taskWarn").innerHTML = ""; taskWarning(); save(); return;
+  }
+  if (e.target.id === "restartBtn"){ $("#restartBox").innerHTML = restartAsk(); $("#restartYes").focus(); return; }
+  if (e.target.id === "restartNo"){ $("#restartBox").innerHTML = restartIdle(); return; }
+  if (e.target.id === "restartYes"){ S = blank(); save(); go(0); toast("Nouveau diagnostic"); return; }
+  const tg = e.target.closest("[data-toggle]");
+  if (tg){
+    const id = tg.dataset.toggle, d = T[id];
+    const cur = S.tasks[id];
+    if (cur && cur.on) cur.on = false;
+    else S.tasks[id] = Object.assign({ qty:d.qty, unit:d.unit, min:d.min, people:1 }, cur || {}, { on:true });
+    const card = body.querySelector(`[data-task="${id}"]`);
+    card.outerHTML = taskCard(d);
+    const nc = body.querySelector(`[data-task="${id}"]`);
+    if (S.tasks[id].on){ const q = nc.querySelector("input"); q && q.focus({preventScroll:true}); }
+    else nc.querySelector(".task-top").focus({preventScroll:true});
+    $("#taskWarn").innerHTML = ""; taskWarning();
+    save(); updateDock(); return;
+  }
+  if (e.target.id === "consent"){
+    S.consent = e.target.checked; save();
+    const mb = $("#mailBtn"); mb.classList.toggle("is-off", !S.consent); mb.setAttribute("aria-disabled", String(!S.consent));
+    $("#copyRecap").disabled = !S.consent; return;
+  }
+  if (e.target.id === "copyRecap"){ copyText(recap(), (() => { const d = $(".recap"); d.open = true; return $("#recapText"); })()); return; }
+  if (e.target.id === "mailBtn" && !S.consent){ e.preventDefault(); }
+});
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-copy]"); if (b) copyText(b.dataset.copy);
+});
+
+renderCarousel();
+route();
+</script>
+
+</body>
+</html>
