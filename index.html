@@ -151,7 +151,7 @@ button,input,select,textarea{font:inherit; color:inherit; letter-spacing:inherit
 .hero-grid{position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:56px; align-items:center}
 @media (max-width:920px){.hero-grid{grid-template-columns:1fr; gap:44px}.hero{padding-block:72px 64px}}
 .kicker{font-size:15px; font-weight:600; color:var(--hero-accent); letter-spacing:-.005em}
-.hero h1{font-size:clamp(44px,7vw,82px); margin-top:14px; letter-spacing:-.04em; line-height:1.02}
+.hero h1{font-size:clamp(36px,5.2vw,62px); margin-top:14px; letter-spacing:-.04em; line-height:1.02}
 .hero h1 .grad{background:linear-gradient(100deg,#7DBBFF 0%,#2F86FF 55%,#5E9BFF 100%); -webkit-background-clip:text; background-clip:text; color:transparent}
 .hero-sub{font-size:clamp(18px,2vw,21px); color:var(--hero-fg-2); margin-top:22px; max-width:34ch; line-height:1.45}
 .hero-cta{display:flex; flex-wrap:wrap; align-items:center; gap:14px 24px; margin-top:34px}
@@ -282,7 +282,7 @@ button,input,select,textarea{font:inherit; color:inherit; letter-spacing:inherit
 .pill.wait{color:var(--warn); background:var(--warn-soft)}
 .pill.new{color:var(--blue-text); background:var(--blue-soft)}
 
-.offer{margin-top:56px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px}
+.offer{margin-top:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px}
 @media (max-width:760px){.offer{grid-template-columns:1fr}}
 .offer-c{background:var(--card); border-radius:var(--r-l); padding:36px 32px}
 .offer-c .tag{font-size:13px; font-weight:600; color:var(--blue-text); letter-spacing:.02em}
@@ -395,6 +395,11 @@ textarea.inp{min-height:92px; resize:vertical; line-height:1.5}
 .qty-row input.inp{flex:1}
 .task-body .hint{grid-column:1/-1}
 
+.add-task{margin-top:12px; width:100%; display:flex; align-items:center; justify-content:center; gap:10px; padding:16px 20px; border-radius:var(--r-m); border:1.5px dashed var(--line-strong); background:transparent; color:var(--blue-text); font-size:16px; font-weight:500; cursor:pointer; transition:border-color .2s, background-color .2s}
+.add-task:hover{border-color:var(--blue); background:var(--card)}
+.add-task span{font-size:22px; line-height:1; font-weight:400}
+.link-btn{grid-column:1/-1; justify-self:start; background:none; border:none; padding:0; color:var(--warn); font-size:14px; cursor:pointer}
+.link-btn:hover{text-decoration:underline}
 .other-inp{margin-top:10px; max-width:440px}
 .span-all{grid-column:1/-1}
 .sugg{margin-top:10px}
@@ -498,7 +503,7 @@ textarea.inp{min-height:92px; resize:vertical; line-height:1.5}
     <div class="wrap hero-grid">
       <div>
         <p class="kicker">Service design · UX/UI · Agents IA</p>
-        <h1>Votre équipe mérite <span class="grad">son temps</span>.</h1>
+        <h1>Moins de tâches répétitives, <span class="grad">plus de temps</span> pour votre cœur de métier.</h1>
         <p class="hero-sub">Je conçois des agents IA sur mesure qui prennent en charge les tâches répétitives de votre entreprise. Vous gardez le temps pour vos clients, votre métier et vos décisions.</p>
         <div class="hero-cta">
           <a class="btn btn-primary btn-lg" href="#diagnostic">Mesurer mon temps récupérable</a>
@@ -600,6 +605,58 @@ textarea.inp{min-height:92px; resize:vertical; line-height:1.5}
     </div>
   </section>
 
+  <!-- Accompagnement -->
+  <section class="band alt" id="accompagnement">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">L'accompagnement</p>
+        <h2 class="sec-title">Deux temps, une seule interlocutrice.</h2>
+      </div>
+      <div class="offer">
+        <div class="offer-c">
+          <p class="tag">La conception</p>
+          <h3>Un agent pensé pour vous.</h3>
+          <p>Une mission courte, cadrée, avec un point d'arrêt possible à chaque étape.</p>
+          <ul>
+            <li>Immersion dans vos process et vos outils</li>
+            <li>Conception et mise en place de l'agent</li>
+            <li>Pilote de deux semaines et gain mesuré</li>
+            <li>Prise en main par votre équipe</li>
+          </ul>
+        </div>
+        <div class="offer-c">
+          <p class="tag">L'abonnement de suivi</p>
+          <h3>Un agent qui évolue avec vous.</h3>
+          <p>Votre activité change, l'agent aussi. Je reste votre interlocutrice.</p>
+          <ul>
+            <li>Ajustements dès que vos besoins changent</li>
+            <li>Améliorations à partir de l'usage réel</li>
+            <li>Disponibilité pour la moindre question</li>
+            <li>Point régulier sur le temps gagné</li>
+          </ul>
+        </div>
+      </div>
+      <p class="offer-note">Le budget est présenté après le diagnostic, en deux lignes claires : la conception et l'abonnement.</p>
+    </div>
+  </section>
+
+  <!-- Méthode -->
+  <section class="band" id="methode">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">La méthode</p>
+        <h2 class="sec-title">Quatre étapes, un résultat mesuré.</h2>
+      </div>
+      <div class="steps">
+        <div class="st"><span class="st-n">1</span><h4>Diagnostic</h4><p>Vous listez vos tâches répétitives en ligne. Vous obtenez le temps récupérable, et je reçois votre diagnostic.</p><p class="dur">8 minutes, en ligne</p></div>
+        <div class="st"><span class="st-n">2</span><h4>Immersion et cadrage</h4><p>Entretiens avec les personnes concernées, observation des process, cartographie du parcours. On choisit la tâche à traiter en premier.</p><p class="dur">½ journée à 1 semaine</p></div>
+        <div class="st"><span class="st-n">3</span><h4>Conception et pilote</h4><p>Je conçois l'agent, on le teste sur vos vrais cas, et on mesure le temps réellement rendu.</p><p class="dur">2 semaines</p></div>
+        <div class="st"><span class="st-n">4</span><h4>Suivi et évolution</h4><p>Votre équipe est formée. L'agent s'améliore avec l'usage et s'adapte à vos nouveaux besoins.</p><p class="dur">En continu</p></div>
+      </div>
+      <p class="steps-note">Vous pouvez vous arrêter après chaque étape.</p>
+    </div>
+  </section>
+
   <!-- Services -->
   <section class="band alt" id="services">
     <div class="wrap">
@@ -658,50 +715,11 @@ textarea.inp{min-height:92px; resize:vertical; line-height:1.5}
         </div>
       </div>
 
-      <div class="offer">
-        <div class="offer-c">
-          <p class="tag">La conception</p>
-          <h3>Un agent pensé pour vous.</h3>
-          <p>Une mission courte, cadrée, avec un point d'arrêt possible à chaque étape.</p>
-          <ul>
-            <li>Immersion dans vos process et vos outils</li>
-            <li>Conception et mise en place de l'agent</li>
-            <li>Pilote de deux semaines et gain mesuré</li>
-            <li>Prise en main par votre équipe</li>
-          </ul>
-        </div>
-        <div class="offer-c">
-          <p class="tag">L'abonnement de suivi</p>
-          <h3>Un agent qui évolue avec vous.</h3>
-          <p>Votre activité change, l'agent aussi. Je reste votre interlocutrice.</p>
-          <ul>
-            <li>Ajustements dès que vos besoins changent</li>
-            <li>Améliorations à partir de l'usage réel</li>
-            <li>Disponibilité pour la moindre question</li>
-            <li>Point régulier sur le temps gagné</li>
-          </ul>
-        </div>
-      </div>
-      <p class="offer-note">Le budget est présenté après le diagnostic, en deux lignes claires : la conception et l'abonnement.</p>
+
     </div>
   </section>
 
-  <!-- Méthode -->
-  <section class="band" id="methode">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">La méthode</p>
-        <h2 class="sec-title">Quatre étapes, un résultat mesuré.</h2>
-      </div>
-      <div class="steps">
-        <div class="st"><span class="st-n">1</span><h4>Diagnostic</h4><p>Vous listez vos tâches répétitives en ligne. Vous obtenez le temps récupérable, et je reçois votre diagnostic.</p><p class="dur">8 minutes, en ligne</p></div>
-        <div class="st"><span class="st-n">2</span><h4>Immersion et cadrage</h4><p>Entretiens avec les personnes concernées, observation des process, cartographie du parcours. On choisit la tâche à traiter en premier.</p><p class="dur">½ journée à 1 semaine</p></div>
-        <div class="st"><span class="st-n">3</span><h4>Conception et pilote</h4><p>Je conçois l'agent, on le teste sur vos vrais cas, et on mesure le temps réellement rendu.</p><p class="dur">2 semaines</p></div>
-        <div class="st"><span class="st-n">4</span><h4>Suivi et évolution</h4><p>Votre équipe est formée. L'agent s'améliore avec l'usage et s'adapte à vos nouveaux besoins.</p><p class="dur">En continu</p></div>
-      </div>
-      <p class="steps-note">Vous pouvez vous arrêter après chaque étape.</p>
-    </div>
-  </section>
+
 
   <section class="cta">
     <div class="wrap">
@@ -816,6 +834,9 @@ const TASKS = [
     basis:"Hypothèse prudente, à préciser pendant le cadrage", agent:"À définir ensemble pendant le cadrage." }
 ];
 const T = Object.fromEntries(TASKS.map(t => [t.id, t]));
+const isCustom = id => id === "autre" || id.startsWith("autre-");
+const defOf = id => T[id] || T.autre;
+const customIds = () => Object.keys(S.tasks).filter(id => id.startsWith("autre-")).sort((a,b) => Number(a.split("-")[1]) - Number(b.split("-")[1]));
 
 const SECTEURS = ["Artisanat / BTP","Commerce / e-commerce","Restauration / hôtellerie","Santé / médico-social","Immobilier","Conseil / services aux entreprises","Juridique / comptable","Formation / éducation","Transport / logistique","Services à la personne","Industrie / agriculture","Association / secteur public","Autre"];
 
@@ -823,7 +844,7 @@ const SECTEURS = ["Artisanat / BTP","Commerce / e-commerce","Restauration / hôt
    ÉTAT
    ============================================================ */
 const blank = () => ({
-  contact:{ prenom:"", nom:"", entreprise:"", email:"", tel:"", secteur:"", effectif:"", role:"" },
+  contact:{ prenom:"", nom:"", entreprise:"", email:"", tel:"", secteur:"", poste:"", effectif:"", role:"" },
   tasks:{},
   org:{ infos:"", outils:[], ia:"", sensible:"" },
   prio:{ tache:"", reussite:"", dispo:[], message:"" },
@@ -849,10 +870,10 @@ function compute(src){
   src = src || S;
   const df = DATA_FACTOR[src.org.infos] || 0.9;
   const rows = Object.entries(src.tasks).filter(([,v]) => v.on).map(([id,v]) => {
-    const def = T[id], h = weekly(v);
+    const def = defOf(id), h = weekly(v);
     const p = Math.max(1, Number(v.people)||1);
     const lo = h*def.share*df*REAL_LOW, hi = h*def.share*df*REAL_HIGH;
-    return { id, def, v, h, lo, hi, p, name: id === "autre" && (v.desc||"").trim() ? v.desc.trim() : def.short, loSolo:lo/p, hiSolo:hi/p };
+    return { id, def, v, h, lo, hi, p, name: isCustom(id) && (v.desc||"").trim() ? v.desc.trim() : def.short, loSolo:lo/p, hiSolo:hi/p };
   }).sort((a,b) => b.hi - a.hi);
   const sum = k => rows.reduce((a,r) => a + r[k], 0);
   const h = sum("h"), lo = sum("lo"), hi = sum("hi");
@@ -1051,7 +1072,7 @@ function chips(path, options, multi){
     return `<button type="button" class="chip" data-chip="${path}" data-val="${esc(o)}" ${multi?'data-multi="1"':""} aria-pressed="${on}">${esc(o)}</button>`;
   }).join("")}</div>${other ? otherInput(path, hasOtherSelected(path)) : ""}`;
 }
-function taskName(id, v){ v = v || S.tasks[id] || {}; return id === "autre" && (v.desc||"").trim() ? v.desc.trim() : T[id].short; }
+function taskName(id, v){ v = v || S.tasks[id] || {}; return isCustom(id) && (v.desc||"").trim() ? v.desc.trim() : defOf(id).short; }
 const SUGGESTIONS_AUTRE = ["Préparer des propositions commerciales","Analyser les avis et retours clients","Synthétiser des questionnaires de satisfaction","Répondre aux avis en ligne","Rédiger des fiches produits ou descriptifs","Préparer des supports de présentation","Préparer des newsletters","Accueillir un nouveau collaborateur","Mettre à jour les procédures internes","Traduire des documents ou messages","Mettre à jour un planning d'équipe","Suivre les commandes fournisseurs"];
 function getPath(p){ return p.split(".").reduce((o,k) => o && o[k], S); }
 function setPath(p, v){ const ks = p.split("."); let o = S; ks.slice(0,-1).forEach(k => o = o[k]); o[ks[ks.length-1]] = v; }
@@ -1077,7 +1098,8 @@ function stepContact(){
       ${field("contact.entreprise","Entreprise",{ac:"organization", full:true})}
       ${field("contact.email","Email professionnel",{type:"email", ac:"email"})}
       ${field("contact.tel","Téléphone",{type:"tel", ac:"tel", optional:true})}
-      ${field("contact.secteur","Secteur d'activité",{select:SECTEURS, full:true})}
+      ${field("contact.secteur","Secteur d'activité",{select:SECTEURS})}
+      ${field("contact.poste","Intitulé de votre poste",{ac:"organization-title", ph:"Ex. : gérante, responsable commerciale…"})}
     </div>
     <div class="q" style="margin-top:28px;padding-top:28px;border-top:1px solid var(--line)">
       <p class="q-l">Combien êtes-vous dans l'entreprise ?</p>
@@ -1101,35 +1123,38 @@ function validContact(){
   return true;
 }
 
-function taskCard(def){
-  const v = S.tasks[def.id];
+function taskCard(def, id){
+  id = id || def.id;
+  const v = S.tasks[id];
+  const extra = id.startsWith("autre-");
   const on = !!(v && v.on);
   const h = on ? weekly(v) : 0;
-  const descBlock = def.id === "autre" && on ? `
-      <div class="field span-all"><label for="d-autre">De quelle tâche s'agit-il ?</label>
-        <input class="inp" id="d-autre" type="text" value="${esc(v.desc||"")}" data-t="autre" data-k="desc" placeholder="Décrivez-la en quelques mots, ou choisissez ci-dessous">
-        <div class="chips sugg" role="group" aria-label="Exemples de tâches">${SUGGESTIONS_AUTRE.map(s => `<button type="button" class="chip" data-sugg="${esc(s)}" aria-pressed="${(v.desc||"") === s}">${esc(s)}</button>`).join("")}</div>
+  const descBlock = isCustom(id) && on ? `
+      <div class="field span-all"><label for="d-${id}">De quelle tâche s'agit-il ?</label>
+        <input class="inp" id="d-${id}" type="text" value="${esc(v.desc||"")}" data-t="${id}" data-k="desc" placeholder="Décrivez-la en quelques mots, ou choisissez ci-dessous">
+        <div class="chips sugg" role="group" aria-label="Exemples de tâches">${SUGGESTIONS_AUTRE.map(s => `<button type="button" class="chip" data-sugg="${esc(s)}" data-sid="${id}" aria-pressed="${(v.desc||"") === s}">${esc(s)}</button>`).join("")}</div>
       </div>` : "";
   const body = on ? `
     <div class="task-body">${descBlock}
-      <div class="field f-qty"><label for="q-${def.id}">Combien de ${esc(def.what)} ?</label>
+      <div class="field f-qty"><label for="q-${id}">Combien de ${esc(def.what)} ?</label>
         <div class="qty-row">
-          <input class="inp" id="q-${def.id}" type="number" min="0" step="1" inputmode="numeric" value="${esc(v.qty)}" data-t="${def.id}" data-k="qty">
-          <select class="inp" id="u-${def.id}" data-t="${def.id}" data-k="unit" aria-label="Fréquence">
+          <input class="inp" id="q-${id}" type="number" min="0" step="1" inputmode="numeric" value="${esc(v.qty)}" data-t="${id}" data-k="qty">
+          <select class="inp" id="u-${id}" data-t="${id}" data-k="unit" aria-label="Fréquence">
             ${["jour","semaine","mois"].map(u => `<option value="${u}" ${v.unit===u?"selected":""}>par ${u}</option>`).join("")}
           </select>
         </div></div>
-      <div class="field"><label for="m-${def.id}">Minutes à chaque fois</label>
-        <input class="inp" id="m-${def.id}" type="number" min="0" step="1" inputmode="numeric" value="${esc(v.min)}" data-t="${def.id}" data-k="min"></div>
-      <div class="field"><label for="p-${def.id}">Personnes concernées</label>
-        <input class="inp" id="p-${def.id}" type="number" min="1" step="1" inputmode="numeric" value="${esc(v.people)}" data-t="${def.id}" data-k="people"></div>
+      <div class="field"><label for="m-${id}">Minutes à chaque fois</label>
+        <input class="inp" id="m-${id}" type="number" min="0" step="1" inputmode="numeric" value="${esc(v.min)}" data-t="${id}" data-k="min"></div>
+      <div class="field"><label for="p-${id}">Personnes concernées</label>
+        <input class="inp" id="p-${id}" type="number" min="1" step="1" inputmode="numeric" value="${esc(v.people)}" data-t="${id}" data-k="people"></div>
+      ${extra ? `<button type="button" class="link-btn" data-remove="${id}">Retirer cette tâche</button>` : ""}
       <p class="hint">Valeurs de départ indicatives. Remplacez-les par les vôtres : une estimation juste vaut mieux qu'un gros chiffre.</p>
     </div>` : "";
-  return `<div class="task ${on?"on":""}" data-task="${def.id}">
-    <button type="button" class="task-top" data-toggle="${def.id}" aria-expanded="${on}">
+  return `<div class="task ${on?"on":""}" data-task="${id}">
+    <button type="button" class="task-top" data-toggle="${id}" aria-expanded="${on}">
       <span class="tick" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5l2.6 2.6L11 4.5"/></svg></span>
-      <span class="task-name">${esc(def.label)}</span>
-      <span class="task-h" data-h="${def.id}">${on ? taskHours(v) : ""}</span>
+      <span class="task-name">${extra ? esc((v && v.desc||"").trim() || "Une autre tâche répétitive") : esc(def.label)}</span>
+      <span class="task-h" data-h="${id}">${on ? taskHours(v) : ""}</span>
     </button>${body}</div>`;
 }
 function taskHours(v){
@@ -1139,16 +1164,17 @@ function taskHours(v){
 function stepTasks(){
   return `<h2>Qu'est-ce qui revient sans cesse ?</h2>
   <p class="intro">Cochez les tâches qui prennent du temps chaque semaine, puis indiquez combien de fois et combien de minutes. Le calcul part de ces volumes, pas d'une estimation globale.</p>
-  <div class="tasks">${TASKS.map(taskCard).join("")}</div>
+  <div class="tasks" id="taskList">${TASKS.map(d => taskCard(d)).join("")}${customIds().map(id => taskCard(T.autre, id)).join("")}</div>
+  <button type="button" class="add-task" id="addTask"><span aria-hidden="true">+</span> Ajouter une autre tâche répétitive</button>
   <div id="taskWarn"></div>`;
 }
 function validTasks(){
   const n = Object.values(S.tasks).filter(v => v.on && weekly(v) > 0).length;
   if (!n){ $("#taskWarn").innerHTML = `<div class="warn-box">Cochez au moins une tâche et indiquez son volume pour obtenir votre résultat.</div>`; return false; }
-  const a = S.tasks.autre;
-  if (a && a.on && !(a.desc||"").trim()){
+  const missing = Object.keys(S.tasks).find(id => isCustom(id) && S.tasks[id].on && !(S.tasks[id].desc||"").trim());
+  if (missing){
     $("#taskWarn").innerHTML = `<div class="warn-box">Précisez de quelle autre tâche il s'agit : écrivez-la ou choisissez un exemple.</div>`;
-    const i = $("#d-autre"); i && i.focus(); return false;
+    const i = $("#d-" + missing); i && i.focus(); return false;
   }
   return true;
 }
@@ -1276,6 +1302,7 @@ function recap(){
   L.push("Nom : " + [c.prenom, c.nom].filter(Boolean).join(" "));
   L.push("Entreprise : " + c.entreprise + (c.secteur ? " (" + withOther("contact.secteur") + ")" : ""));
   if (c.effectif) L.push("Effectif : " + c.effectif);
+  if (c.poste) L.push("Poste : " + c.poste);
   if (c.role) L.push("Rôle : " + withOther("contact.role"));
   L.push("Email : " + c.email + (c.tel ? " · Tél. : " + c.tel : ""), "");
   L.push("TÂCHES RÉPÉTITIVES");
@@ -1342,7 +1369,10 @@ body.addEventListener("input", e => {
   if (id && k){
     S.tasks[id][k] = k === "unit" ? e.target.value : e.target.value;
     const span = body.querySelector(`[data-h="${id}"]`); if (span) span.textContent = taskHours(S.tasks[id]);
-    if (k === "desc") body.querySelectorAll("[data-sugg]").forEach(c => c.setAttribute("aria-pressed", String(c.dataset.sugg === e.target.value)));
+    if (k === "desc"){
+      body.querySelectorAll(`[data-sid="${id}"]`).forEach(c => c.setAttribute("aria-pressed", String(c.dataset.sugg === e.target.value)));
+      if (id.startsWith("autre-")){ const n = body.querySelector(`[data-task="${id}"] .task-name`); if (n) n.textContent = e.target.value.trim() || "Une autre tâche répétitive"; }
+    }
     save(); updateDock(); taskWarning();
   }
 });
@@ -1364,21 +1394,38 @@ body.addEventListener("click", e => {
   }
   const sg = e.target.closest("[data-sugg]");
   if (sg){
-    S.tasks.autre.desc = sg.dataset.sugg; const i = $("#d-autre"); if (i) i.value = sg.dataset.sugg;
-    body.querySelectorAll("[data-sugg]").forEach(c => c.setAttribute("aria-pressed", String(c === sg)));
+    const sid = sg.dataset.sid;
+    S.tasks[sid].desc = sg.dataset.sugg; const i = $("#d-" + sid); if (i) i.value = sg.dataset.sugg;
+    body.querySelectorAll(`[data-sid="${sid}"]`).forEach(c => c.setAttribute("aria-pressed", String(c === sg)));
+    if (sid.startsWith("autre-")){ const n = body.querySelector(`[data-task="${sid}"] .task-name`); if (n) n.textContent = sg.dataset.sugg; }
     $("#taskWarn").innerHTML = ""; taskWarning(); save(); return;
+  }
+  if (e.target.closest("#addTask")){
+    const nums = customIds().map(id => Number(id.split("-")[1]));
+    const id = "autre-" + ((nums.length ? Math.max(...nums) : 1) + 1);
+    S.tasks[id] = { qty:T.autre.qty, unit:T.autre.unit, min:T.autre.min, people:1, desc:"", on:true };
+    $("#taskList").insertAdjacentHTML("beforeend", taskCard(T.autre, id));
+    const i = $("#d-" + id); i && i.focus();
+    save(); updateDock(); taskWarning(); return;
+  }
+  const rm = e.target.closest("[data-remove]");
+  if (rm){
+    const id = rm.dataset.remove; delete S.tasks[id];
+    const c = body.querySelector(`[data-task="${id}"]`); c && c.remove();
+    $("#addTask").focus(); $("#taskWarn").innerHTML = ""; taskWarning();
+    save(); updateDock(); return;
   }
   if (e.target.id === "restartBtn"){ $("#restartBox").innerHTML = restartAsk(); $("#restartYes").focus(); return; }
   if (e.target.id === "restartNo"){ $("#restartBox").innerHTML = restartIdle(); return; }
   if (e.target.id === "restartYes"){ S = blank(); save(); go(0); toast("Nouveau diagnostic"); return; }
   const tg = e.target.closest("[data-toggle]");
   if (tg){
-    const id = tg.dataset.toggle, d = T[id];
+    const id = tg.dataset.toggle, d = defOf(id);
     const cur = S.tasks[id];
     if (cur && cur.on) cur.on = false;
     else S.tasks[id] = Object.assign({ qty:d.qty, unit:d.unit, min:d.min, people:1 }, cur || {}, { on:true });
     const card = body.querySelector(`[data-task="${id}"]`);
-    card.outerHTML = taskCard(d);
+    card.outerHTML = taskCard(d, id);
     const nc = body.querySelector(`[data-task="${id}"]`);
     if (S.tasks[id].on){ const q = nc.querySelector("input"); q && q.focus({preventScroll:true}); }
     else nc.querySelector(".task-top").focus({preventScroll:true});
