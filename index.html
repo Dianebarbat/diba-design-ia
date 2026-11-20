@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Diane Barbat, service designer et UX/UI designer spécialisée en IA. Agents IA sur mesure pour les TPE et PME, avec la méthode du design thinking.">
 <meta property="og:title" content="Diba.design.ia">
-<meta property="og:description" content="Moins de tâches répétitives, plus de temps pour votre cœur de métier.">
+<meta property="og:description" content="L'IA pensée pour votre entreprise : des solutions IA qui s'adaptent à votre quotidien.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#050A16">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230066E0'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EDB%3C/text%3E%3C/svg%3E">
@@ -104,9 +104,10 @@ button,input,textarea{font:inherit; color:inherit; letter-spacing:inherit}
 .hero::before{content:""; position:absolute; width:1000px; height:1000px; left:50%; top:-560px; transform:translateX(-50%); background:radial-gradient(closest-side, var(--glow), transparent 70%); pointer-events:none}
 .hero .wrap{position:relative}
 .kicker{font-size:15px; font-weight:600; color:var(--dark-accent)}
-.hero h1{font-size:clamp(40px,6.4vw,76px); margin:18px auto 0; max-width:17ch; letter-spacing:-.045em; line-height:1.02}
+.hero h1{font-size:clamp(42px,6.8vw,80px); margin:18px auto 0; max-width:14ch; letter-spacing:-.045em; line-height:1.02}
 .hero h1 .grad{background:linear-gradient(100deg,#8CC4FF 0%,#2F86FF 60%,#6FA8FF 100%); -webkit-background-clip:text; background-clip:text; color:transparent}
-.hero-sub{font-size:clamp(18px,2.1vw,21px); color:var(--dark-fg-2); margin:26px auto 0; max-width:48ch; line-height:1.45}
+.hero-tag{font-family:var(--f-display); font-size:clamp(22px,2.6vw,28px); font-weight:600; letter-spacing:-.025em; margin:24px auto 0; max-width:34ch; line-height:1.25}
+.hero-sub{font-size:clamp(17px,2vw,20px); color:var(--dark-fg-2); margin:16px auto 0; max-width:48ch; line-height:1.45}
 .hero-cta{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:14px 26px; margin-top:40px}
 .hero .btn-primary{background:#1A73F0; color:#fff}
 .hero .btn-primary:hover{background:#2F83FF}
@@ -138,6 +139,19 @@ button,input,textarea{font:inherit; color:inherit; letter-spacing:inherit}
 .punch p{color:var(--dark-fg-2); margin:18px auto 0; font-size:18px; max-width:44ch}
 .punch small{display:block; margin-top:28px; font-size:13px; color:var(--dark-fg-2); opacity:.8}
 
+/* résultats */
+.results{display:grid; gap:16px; grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:860px){.results{grid-template-columns:1fr}}
+.res{background:var(--bg-alt); border-radius:var(--r-l); padding:36px 32px; display:flex; flex-direction:column; gap:10px}
+.res-sign{width:48px; height:48px; border-radius:50%; background:var(--blue); color:var(--blue-ink); display:grid; place-items:center; font-family:var(--f-display); font-size:28px; font-weight:600; line-height:1; margin-bottom:8px}
+.res h3{font-size:24px; letter-spacing:-.025em}
+.res p{color:var(--fg-2); font-size:16.5px}
+
+/* phrase de valeur */
+.value{background:var(--dark); color:var(--dark-fg); text-align:center; padding-block:110px}
+.value-a{font-family:var(--f-display); font-size:clamp(30px,4.6vw,52px); font-weight:700; letter-spacing:-.04em; line-height:1.08; max-width:18ch; margin:0 auto; text-wrap:balance}
+.value-b{font-size:clamp(18px,2.2vw,23px); color:var(--dark-fg-2); max-width:40ch; margin:24px auto 0; line-height:1.45; text-wrap:balance}
+
 /* IA expliquée */
 .simple{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:64px; align-items:start}
 @media (max-width:860px){.simple{grid-template-columns:1fr; gap:40px}}
@@ -154,7 +168,7 @@ button,input,textarea{font:inherit; color:inherit; letter-spacing:inherit}
 .steps{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px}
 @media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.steps{grid-template-columns:1fr}}
-.st{background:var(--card); border-radius:var(--r-m); padding:30px 26px; display:flex; flex-direction:column; gap:10px}
+.st{background:var(--bg-alt); border-radius:var(--r-m); padding:30px 26px; display:flex; flex-direction:column; gap:10px}
 .st-n{font-size:14px; font-weight:600; color:var(--blue-text)}
 .st h3{font-size:24px; letter-spacing:-.025em}
 .st p{font-size:16px; color:var(--fg-2)}
@@ -259,8 +273,9 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
   <section class="hero" id="accueil">
     <div class="wrap">
       <p class="kicker">L'IA au service des TPE et PME</p>
-      <h1>Allez plus vite. Soyez mieux organisé. <span class="grad">L'IA s'occupe du reste.</span></h1>
-      <p class="hero-sub">J'automatise avec vous les tâches qui reviennent sans cesse : relances, appels, devis, mails. Ensemble, on crée aussi les fichiers adaptés à votre activité (Excel, PowerPoint…) et des compétences IA faites pour vos besoins et vos habitudes. Simplement, sans jargon, pour garder votre temps pour votre cœur de métier.</p>
+      <h1>L'IA pensée pour <span class="grad">votre entreprise</span>.</h1>
+      <p class="hero-tag">Gagnez du temps. Simplifiez votre quotidien. Développez votre activité.</p>
+      <p class="hero-sub">Pas de solution standardisée ni de technologie compliquée. Nous identifions vos besoins et concevons des outils IA adaptés à votre activité, vos équipes et vos méthodes de travail.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#contact">Parlons de votre quotidien</a>
         <a class="link-more" href="#exemples">Voir des exemples</a>
@@ -279,7 +294,7 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
         <div class="qcard"><span class="qm" aria-hidden="true">?</span><p>Combien de clients sont restés sans réponse parce que vous étiez occupé ?</p></div>
         <div class="qcard"><span class="qm" aria-hidden="true">?</span><p>Si vous récupériez une journée par semaine, qu'en feriez-vous ?</p></div>
       </div>
-      <p class="q-foot">Une de ces questions vous parle ? <b>Alors on a de quoi travailler ensemble.</b></p>
+      <p class="q-foot">Une de ces questions vous parle ? <b>Alors nous avons de quoi travailler ensemble.</b></p>
     </div>
   </section>
 
@@ -293,40 +308,54 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
   </section>
 
   <section class="band">
+    <div class="wrap">
+      <div class="sec-head center">
+        <p class="eyebrow">Ce qui change</p>
+        <h2 class="sec-title">Si nous travaillions ensemble.</h2>
+      </div>
+      <div class="results">
+        <div class="res"><span class="res-sign" aria-hidden="true">+</span><h3>Plus de temps pour la stratégie</h3><p>Vous sortez la tête du quotidien pour réfléchir à l'avenir de votre entreprise et la développer.</p></div>
+        <div class="res"><span class="res-sign" aria-hidden="true">−</span><h3>Moins de charge financière</h3><p>Moins d'heures passées sur des tâches à faible valeur, sans recruter pour absorber le volume.</p></div>
+        <div class="res"><span class="res-sign" aria-hidden="true">−</span><h3>Moins de pression opérationnelle</h3><p>Moins d'oublis, de retards et d'urgences de dernière minute. Chacun sait où il en est.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt">
     <div class="wrap simple">
       <div>
         <p class="eyebrow">L'IA, expliquée simplement</p>
-        <p class="def">Un agent IA, c'est <em>un assistant numérique</em> qui s'occupe d'une tâche précise, tous les jours, sans se lasser.</p>
+        <p class="def">L'IA ne sert pas qu'à automatiser. C'est <em>un outil fait sur mesure</em>, qui s'adapte à vos besoins et à votre façon de travailler.</p>
       </div>
       <div class="points">
         <div class="point">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 8l9 6 9-6"/></svg></span>
-          <div><h3>Il travaille avec vos outils</h3><p>Votre messagerie, vos fichiers Excel, votre agenda. Pas de nouveau logiciel à apprendre.</p></div>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0113.7-5.6L20 8.7"/><path d="M20 4v4.7h-4.7"/><path d="M20 12a8 8 0 01-13.7 5.6L4 15.3"/><path d="M4 20v-4.7h4.7"/></svg></span>
+          <div><h3>Il prend en charge ce qui se répète</h3><p>Relances, devis, saisie, comptes rendus : ce qui revient chaque semaine est fait pour vous, et vous validez.</p></div>
         </div>
         <div class="point">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-3 7.4-7 9-4-1.6-7-4.8-7-9V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></span>
-          <div><h3>Vous gardez la main</h3><p>Rien d'important ne part sans votre accord. Vous décidez, il exécute.</p></div>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></svg></span>
+          <div><h3>Il crée du lien</h3><p>Entre vos équipes, avec vos clients : la bonne information arrive à la bonne personne, au bon moment.</p></div>
         </div>
         <div class="point">
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5"/></svg></span>
-          <div><h3>Il est fait pour vous</h3><p>Pas un outil standard : il est conçu pour votre métier, vos clients et votre façon de travailler.</p></div>
+          <div><h3>Il s'adapte à vous</h3><p>Il travaille avec vos outils et vos habitudes, et il évolue en même temps que votre activité.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="band alt" id="methode">
+  <section class="band" id="methode">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">La méthode</p>
-        <h2 class="sec-title">Comprendre d'abord. Automatiser ensuite.</h2>
-        <p class="sec-lead">J'utilise le design thinking, une méthode éprouvée qui part des personnes et de leurs vrais problèmes. Je l'applique à l'IA, étape par étape, avec vous.</p>
+        <h2 class="sec-title">Pensé pour vous. Conçu avec vous.</h2>
+        <p class="sec-lead">J'utilise le design thinking, une méthode éprouvée qui part des personnes et de leurs vrais problèmes. Nous l'appliquons à l'IA, étape par étape, ensemble.</p>
       </div>
       <div class="steps">
-        <div class="st"><span class="st-n">Étape 1</span><h3>Comprendre</h3><p>On établit ensemble le diagnostic. Je vous pose les bonnes questions pour repérer ce qui vous fait vraiment perdre du temps.</p><p class="dur">Un premier échange</p></div>
-        <div class="st"><span class="st-n">Étape 2</span><h3>Imaginer</h3><p>On choisit la tâche à confier en premier et la façon dont l'agent doit travailler pour vous.</p><p class="dur">Ensemble, en atelier</p></div>
-        <div class="st"><span class="st-n">Étape 3</span><h3>Tester</h3><p>Je construis l'agent. On l'essaie sur vos vrais cas et on mesure le temps réellement gagné.</p><p class="dur">2 semaines</p></div>
-        <div class="st"><span class="st-n">Étape 4</span><h3>Faire évoluer</h3><p>Vous devenez autonome, ou je reste à vos côtés avec un abonnement de suivi pour ajuster l'agent à vos besoins.</p><p class="dur">À votre rythme</p></div>
+        <div class="st"><span class="st-n">Étape 1</span><h3>Comprendre</h3><p>Nous établissons ensemble le diagnostic. Je vous pose les bonnes questions pour repérer ce qui vous fait vraiment perdre du temps.</p><p class="dur">Un premier échange</p></div>
+        <div class="st"><span class="st-n">Étape 2</span><h3>Imaginer</h3><p>Nous choisissons par où commencer et la façon dont nous allons créer ensemble l'outil qui vous correspond.</p><p class="dur">Ensemble</p></div>
+        <div class="st"><span class="st-n">Étape 3</span><h3>Tester</h3><p>Je construis l'outil. Nous l'essayons sur vos vrais cas et mesurons le temps réellement gagné.</p><p class="dur">2 semaines</p></div>
+        <div class="st"><span class="st-n">Étape 4</span><h3>Faire évoluer</h3><p>Vous devenez autonome, et je reste à vos côtés avec un abonnement de suivi pour ajuster l'agent à vos besoins.</p><p class="dur">À votre rythme</p></div>
       </div>
       <p class="steps-note">Vous pouvez vous arrêter après chaque étape.</p>
     </div>
@@ -353,7 +382,6 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
         <p class="sec-lead">Dites-moi en quelques mots ce qui vous prend du temps. Je vous recontacte pour un premier échange.</p>
         <div class="promise">
           <div>Sans engagement</div>
-          <div>Sans jargon technique</div>
           <div>Un diagnostic fait ensemble, adapté à votre entreprise</div>
         </div>
       </div>
@@ -366,7 +394,7 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
           <div class="field"><label for="c-mail">Email</label><input class="inp" id="c-mail" type="email" autocomplete="email"><span class="err-msg" data-err="c-mail" hidden></span></div>
           <div class="field"><label for="c-tel">Téléphone <span class="opt">(facultatif)</span></label><input class="inp" id="c-tel" type="tel" autocomplete="tel"></div>
         </div>
-        <div class="field"><label for="c-msg">Ce qui vous prend du temps</label><p class="field-hint" id="c-msg-hint">Vous ne savez pas trop comment le dire ? Ce n'est pas grave : racontez simplement votre semaine, on mettra les mots dessus ensemble.</p><textarea aria-describedby="c-msg-hint" class="inp" id="c-msg" placeholder="Par exemple : je passe mes soirées à faire mes devis, je rate des appels quand je suis en rendez-vous…"></textarea><span class="err-msg" data-err="c-msg" hidden></span></div>
+        <div class="field"><label for="c-msg">Ce qui vous prend du temps</label><p class="field-hint" id="c-msg-hint">Vous ne savez pas trop comment le dire ? Ce n'est pas grave : racontez simplement votre semaine, nous mettrons les mots dessus ensemble.</p><textarea aria-describedby="c-msg-hint" class="inp" id="c-msg" placeholder="Par exemple : je passe mes soirées à faire mes devis, je rate des appels quand je suis en rendez-vous…"></textarea><span class="err-msg" data-err="c-msg" hidden></span></div>
         <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
         <p class="form-note">Le bouton ouvre votre messagerie avec le message déjà rédigé : il vous reste à cliquer sur Envoyer.</p>
         <div id="sentBox" hidden></div>
@@ -409,7 +437,7 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
         <h2 class="sec-title">D'autres tâches à confier.</h2>
       </div>
       <div class="uses">
-        <div class="use"><h3>Fichiers sur mesure</h3><p>On crée ensemble les fichiers dont vous avez besoin : tableaux Excel qui se mettent à jour tout seuls, présentations PowerPoint, modèles de devis.</p></div>
+        <div class="use"><h3>Fichiers sur mesure</h3><p>Nous créons ensemble les fichiers dont vous avez besoin : tableaux Excel qui se mettent à jour tout seuls, présentations PowerPoint, modèles de devis.</p></div>
         <div class="use"><h3>Compétences à votre image</h3><p>Votre façon de faire, écrite une fois et installée dans votre IA. Elle travaille selon vos habitudes, à chaque fois.</p></div>
         <div class="use"><h3>Réponses aux mails</h3><p>Les questions qui reviennent reçoivent une réponse prête, dans votre ton. Vous validez.</p></div>
         <div class="use"><h3>Relances</h3><p>Devis sans réponse, factures en retard : chacun est relancé au bon moment.</p></div>
@@ -442,8 +470,8 @@ const CASES = [
   { trade:"Commercial B2B", title:"Il cherche ses prospects dans les fichiers de toute l'équipe.",
     before:"Chacun a son Excel, les doublons sont partout et personne ne sait qui a déjà appelé qui.",
     after:"L'agent rassemble les fichiers, supprime les doublons, qualifie les prospects et prépare le premier message. Le lundi, la liste est prête.",
-    more:"Il peut aussi créer un fichier Excel partagé ou un petit site accessible à tout moment. Chaque commercial y retrouve ses tâches et sa sélection de clients à voir. Après chaque visite, il note son retour en direct : rendez-vous fait, visite reportée, client déjà équipé chez un concurrent… Toute l'équipe voit où en est chaque client.",
-    gain:"5 h" },
+    more:"Il peut aussi créer un fichier Excel partagé ou un site accessible à tout moment, sur ordinateur ou sur téléphone. Chaque commercial y retrouve ses tâches et sa sélection de clients à voir. Après chaque visite, il note son retour en direct : rendez-vous fait, visite reportée, client déjà équipé chez un concurrent… Toute l'équipe voit où en est chaque client. L'outil peut aussi intégrer un module de rédaction rapide des devis.",
+    gain:"7 h" },
   { trade:"Plombier à son compte", title:"Il ne peut pas décrocher quand il est sous un évier.",
     before:"Les appels tombent en pleine intervention. Le soir, il rappelle, cale les rendez-vous et oublie des devis.",
     after:"L'agent répond à chaque appel, repère les urgences, cale le rendez-vous dans son agenda et lui envoie un résumé par SMS.",
@@ -453,13 +481,13 @@ const CASES = [
     after:"Il donne simplement les éléments du chantier : mesures, matériaux, options. L'agent crée le devis automatiquement à partir de sa trame habituelle, avec ses prix. Il peut même dicter ses mesures en sortant du chantier : le devis est prêt à relire avant le suivant.",
     gain:"4 h" },
   { trade:"Chargée de communication", title:"Elle gère les réseaux sociaux en plus de son poste.",
-    before:"Une idée de publication le lundi, en ligne le jeudi si tout va bien. Les messages attendent.",
-    after:"L'agent prépare un mois de publications dans le ton de la marque et propose une réponse aux messages.",
-    gain:"3 h 30" },
+    before:"Une idée de publication le lundi, en ligne le jeudi si tout va bien. Le reste de son poste attend.",
+    after:"L'agent prépare un mois de publications dans le ton de la marque et les décline pour chaque réseau. Elle choisit, ajuste et programme.",
+    gain:"3 h" },
   { trade:"Boutique de carrelage", title:"Ses clients n'arrivent pas à se projeter.",
     before:"Les clients hésitent, reviennent deux fois avec leurs échantillons. Les vendeurs calculent les surfaces à la main.",
-    after:"Le client envoie une photo de sa pièce et voit le carrelage posé, avec les quantités. Le vendeur reprend la main pour conclure.",
-    gain:"4 h" }
+    after:"Le client envoie une photo de sa pièce et voit le carrelage posé, avec les quantités. Dès qu'il valide le rendu, le devis est généré automatiquement. Le vendeur reprend la main pour conclure.",
+    gain:"5 h" }
 ];
 $("#cases").innerHTML = CASES.map(c => `
   <article class="case">
