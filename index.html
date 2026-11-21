@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Diane Barbat, service designer et UX/UI designer spécialisée en IA. Agents IA sur mesure pour les TPE et PME, avec la méthode du design thinking.">
+<meta name="description" content="Diba.design.ia, fondée par Diane Barbat, avec Arthur Raquin. Agents IA sur mesure pour les TPE et PME, avec la méthode du design thinking.">
 <meta property="og:title" content="Diba.design.ia">
 <meta property="og:description" content="L'IA pensée pour votre entreprise : des solutions IA qui s'adaptent à votre quotidien.">
 <meta property="og:type" content="website">
@@ -125,7 +125,8 @@ button,input,textarea{font:inherit; color:inherit; letter-spacing:inherit}
 .questions{display:grid; gap:16px; grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:860px){.questions{grid-template-columns:1fr}}
 .qcard{background:var(--card); border-radius:var(--r-l); padding:40px 34px; display:flex; flex-direction:column; gap:22px}
-.qcard .qm{font-family:var(--f-display); font-size:56px; line-height:.7; color:var(--blue-text); font-weight:700}
+.qcard .qi{width:52px; height:52px; border-radius:15px; background:var(--blue-soft); color:var(--blue-text); display:grid; place-items:center}
+.qcard .qi svg{width:26px; height:26px}
 .qcard p{font-family:var(--f-display); font-size:clamp(22px,2.4vw,26px); font-weight:600; letter-spacing:-.025em; line-height:1.22}
 .q-foot{text-align:center; margin-top:44px; font-size:19px; color:var(--fg-2)}
 .q-foot b{color:var(--fg); font-weight:600}
@@ -208,13 +209,15 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
 .addr code{font-family:var(--f-text); font-weight:600; color:var(--fg); user-select:all}
 .sent{background:var(--blue-soft); border-radius:var(--r-s); padding:16px 18px; font-size:15.5px; color:var(--fg)}
 
-/* à propos (fin de page) */
-.about{display:grid; grid-template-columns:auto minmax(0,1fr); gap:28px; align-items:start; max-width:760px; margin:0 auto}
-@media (max-width:560px){.about{grid-template-columns:1fr; gap:18px}}
-.monogram{width:72px; height:72px; border-radius:50%; background:linear-gradient(135deg,#1A73F0,#5CA8FF); color:#fff; display:grid; place-items:center; font-family:var(--f-display); font-weight:700; font-size:26px; letter-spacing:-.03em}
-.about h2{font-size:28px}
-.about .role{color:var(--blue-text); font-weight:500; margin-top:4px}
-.about p.txt{color:var(--fg-2); margin-top:16px; font-size:17px}
+/* équipe (fin de page) */
+.team{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px}
+@media (max-width:760px){.team{grid-template-columns:1fr}}
+.person{background:var(--bg-alt); border-radius:var(--r-l); padding:36px 32px; display:flex; flex-direction:column; gap:6px}
+.monogram{width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg,#1A73F0,#5CA8FF); color:#fff; display:grid; place-items:center; font-family:var(--f-display); font-weight:700; font-size:23px; letter-spacing:-.03em; margin-bottom:14px}
+.monogram.alt{background:linear-gradient(135deg,#0B2A55,#1A73F0)}
+.person h3{font-size:26px}
+.person .role{color:var(--blue-text); font-weight:500; font-size:15.5px; line-height:1.4}
+.person .txt{color:var(--fg-2); margin-top:12px; font-size:16.5px}
 
 .foot{border-top:1px solid var(--line); padding-block:32px; font-size:13px; color:var(--fg-3)}
 .foot-in{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px}
@@ -224,7 +227,7 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
 .ex-hero h1{font-size:clamp(38px,5.6vw,64px); margin-top:10px; max-width:18ch}
 .cases{display:grid; gap:16px}
 .case{background:var(--card); border:1px solid var(--line); border-radius:var(--r-l); padding:36px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr) 200px; gap:32px; align-items:start}
-@media (max-width:900px){.case{grid-template-columns:1fr 1fr}.case .gain{grid-column:1/-1}}
+@media (max-width:900px){.case{grid-template-columns:1fr 1fr}.case .side{grid-column:1/-1}}
 @media (max-width:600px){.case{grid-template-columns:1fr; padding:28px 22px; gap:22px}}
 .case .trade{font-size:13px; font-weight:600; color:var(--blue-text); letter-spacing:.02em}
 .case h3{font-size:22px; margin-top:8px; letter-spacing:-.025em; line-height:1.2}
@@ -235,6 +238,9 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
 .case .after .lbl{color:var(--blue-text)}
 .case .after p{color:var(--fg)}
 .case .after p.more{color:var(--fg-2); margin-top:12px; padding-top:12px; border-top:1px solid var(--line)}
+.side{display:flex; flex-direction:column; gap:10px}
+.demo{width:100%}
+.demo.soon{background:var(--bg-alt); color:var(--fg-3); cursor:default; border-color:var(--line)}
 .gain{background:var(--blue-soft); border-radius:var(--r-m); padding:20px; display:flex; flex-direction:column; gap:4px}
 .gain .k{font-size:13px; color:var(--blue-text); font-weight:600}
 .gain .v{font-family:var(--f-display); font-size:34px; font-weight:700; letter-spacing:-.04em; color:var(--blue-text); line-height:1.05}
@@ -248,8 +254,10 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
 .use h3{font-size:20px; letter-spacing:-.02em; font-weight:600}
 .use p{color:var(--fg-2); margin-top:8px; font-size:15.5px}
 .ex-cta{text-align:center; padding-block:96px 120px}
-.ex-cta h2{font-size:clamp(30px,4.4vw,48px)}
-.ex-cta p{color:var(--fg-2); font-size:19px; margin:16px auto 0; max-width:40ch}
+.ex-cta h2{color:var(--fg-2); font-size:clamp(22px,2.8vw,30px); font-weight:600}
+.ex-cta .punchline{font-family:var(--f-display); font-size:clamp(38px,6vw,68px); font-weight:700; letter-spacing:-.045em; line-height:1.04; margin:14px auto 0; max-width:16ch; text-wrap:balance}
+.ex-cta .punchline span{background:linear-gradient(100deg,#2F86FF 0%,#0058C2 100%); -webkit-background-clip:text; background-clip:text; color:transparent}
+.ex-cta .btn{font-size:18px; padding:15px 30px}
 .ex-cta .btn{margin-top:30px}
 
 .toast{position:fixed; left:50%; bottom:calc(28px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); background:var(--fg); color:var(--bg); padding:11px 20px; border-radius:980px; font-size:15px; z-index:80; max-width:calc(100% - 32px); text-align:center}
@@ -264,7 +272,7 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
       <a class="tab" href="#accueil" data-view="home">Accueil</a>
       <a class="tab" href="#exemples" data-view="examples">Exemples</a>
     </nav>
-    <a class="btn btn-primary btn-sm" href="#contact">Me contacter</a>
+    <a class="btn btn-primary btn-sm" href="#contact">Nous contacter</a>
   </div>
 </header>
 
@@ -290,11 +298,28 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
         <h2 class="sec-title">Trois questions à vous poser.</h2>
       </div>
       <div class="questions">
-        <div class="qcard"><span class="qm" aria-hidden="true">?</span><p>Qu'est-ce que vous refaites chaque semaine, à l'identique ?</p></div>
-        <div class="qcard"><span class="qm" aria-hidden="true">?</span><p>Combien de clients sont restés sans réponse parce que vous étiez occupé ?</p></div>
-        <div class="qcard"><span class="qm" aria-hidden="true">?</span><p>Si vous récupériez une journée par semaine, qu'en feriez-vous ?</p></div>
+        <div class="qcard"><span class="qi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0113.7-5.6L20 8.7"/><path d="M20 4v4.7h-4.7"/><path d="M20 12a8 8 0 01-13.7 5.6L4 15.3"/><path d="M4 20v-4.7h4.7"/></svg></span><p>Qu'est-ce que vous refaites chaque semaine, à l'identique ?</p></div>
+        <div class="qcard"><span class="qi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3.5l1.8 4.5-2.3 1.4a11 11 0 005.1 5.1l1.4-2.3L19 14.5V18a2 2 0 01-2 2A14 14 0 013 6a2 2 0 012-2z"/><path d="M15 3l6 6M21 3l-6 6"/></svg></span><p>Combien de clients sont restés sans réponse parce que vous étiez occupé ?</p></div>
+        <div class="qcard"><span class="qi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M9.5 14.5l1.8 1.8 3.5-3.6"/></svg></span><p>Si vous récupériez une journée par semaine, qu'en feriez-vous ?</p></div>
       </div>
       <p class="q-foot">Une de ces questions vous parle ? <b>Alors nous avons de quoi travailler ensemble.</b></p>
+    </div>
+  </section>
+
+  <section class="band" id="methode">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">La méthode</p>
+        <h2 class="sec-title">Pensé pour vous. Conçu avec vous.</h2>
+        <p class="sec-lead">Nous utilisons le design thinking, une méthode éprouvée qui part des personnes et de leurs vrais problèmes. Nous l'appliquons à l'IA, étape par étape, avec vous.</p>
+      </div>
+      <div class="steps">
+        <div class="st"><span class="st-n">Étape 1</span><h3>Comprendre</h3><p>Nous établissons ensemble le diagnostic. Nous vous posons les bonnes questions pour repérer ce qui vous fait vraiment perdre du temps.</p><p class="dur">Un premier échange</p></div>
+        <div class="st"><span class="st-n">Étape 2</span><h3>Imaginer</h3><p>Nous choisissons par où commencer et la façon dont nous allons créer ensemble l'outil qui vous correspond.</p><p class="dur">Ensemble</p></div>
+        <div class="st"><span class="st-n">Étape 3</span><h3>Tester</h3><p>Nous construisons l'outil, l'essayons sur vos vrais cas et mesurons le temps réellement gagné.</p><p class="dur">2 semaines</p></div>
+        <div class="st"><span class="st-n">Étape 4</span><h3>Faire évoluer</h3><p>Vous devenez autonome, et nous restons à vos côtés avec un abonnement de suivi pour ajuster l'agent à vos besoins.</p><p class="dur">À votre rythme</p></div>
+      </div>
+      <p class="steps-note">Vous pouvez vous arrêter après chaque étape.</p>
     </div>
   </section>
 
@@ -344,23 +369,6 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
     </div>
   </section>
 
-  <section class="band" id="methode">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">La méthode</p>
-        <h2 class="sec-title">Pensé pour vous. Conçu avec vous.</h2>
-        <p class="sec-lead">J'utilise le design thinking, une méthode éprouvée qui part des personnes et de leurs vrais problèmes. Nous l'appliquons à l'IA, étape par étape, ensemble.</p>
-      </div>
-      <div class="steps">
-        <div class="st"><span class="st-n">Étape 1</span><h3>Comprendre</h3><p>Nous établissons ensemble le diagnostic. Je vous pose les bonnes questions pour repérer ce qui vous fait vraiment perdre du temps.</p><p class="dur">Un premier échange</p></div>
-        <div class="st"><span class="st-n">Étape 2</span><h3>Imaginer</h3><p>Nous choisissons par où commencer et la façon dont nous allons créer ensemble l'outil qui vous correspond.</p><p class="dur">Ensemble</p></div>
-        <div class="st"><span class="st-n">Étape 3</span><h3>Tester</h3><p>Je construis l'outil. Nous l'essayons sur vos vrais cas et mesurons le temps réellement gagné.</p><p class="dur">2 semaines</p></div>
-        <div class="st"><span class="st-n">Étape 4</span><h3>Faire évoluer</h3><p>Vous devenez autonome, et je reste à vos côtés avec un abonnement de suivi pour ajuster l'agent à vos besoins.</p><p class="dur">À votre rythme</p></div>
-      </div>
-      <p class="steps-note">Vous pouvez vous arrêter après chaque étape.</p>
-    </div>
-  </section>
-
   <section class="band">
     <div class="wrap">
       <div class="bridge">
@@ -379,7 +387,7 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
       <div>
         <p class="eyebrow">Contact</p>
         <h2 class="sec-title">Commençons par en parler.</h2>
-        <p class="sec-lead">Dites-moi en quelques mots ce qui vous prend du temps. Je vous recontacte pour un premier échange.</p>
+        <p class="sec-lead">Dites-nous en quelques mots ce qui vous prend du temps. Nous vous recontactons pour un premier échange.</p>
         <div class="promise">
           <div>Sans engagement</div>
           <div>Un diagnostic fait ensemble, adapté à votre entreprise</div>
@@ -398,20 +406,31 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
         <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
         <p class="form-note">Le bouton ouvre votre messagerie avec le message déjà rédigé : il vous reste à cliquer sur Envoyer.</p>
         <div id="sentBox" hidden></div>
-        <div class="addr">Ou écrivez-moi directement : <code>diane.barbat.pro@gmail.com</code> <button class="btn btn-quiet btn-sm" type="button" data-copy="diane.barbat.pro@gmail.com">Copier</button></div>
+        <div class="addr">Ou écrivez-nous directement : <code>diane.barbat.pro@gmail.com</code> <button class="btn btn-quiet btn-sm" type="button" data-copy="diane.barbat.pro@gmail.com">Copier</button></div>
       </form>
     </div>
   </section>
 
-  <section class="band">
+  <section class="band" id="equipe">
     <div class="wrap">
-      <div class="about">
-        <div class="monogram" aria-hidden="true">DB</div>
-        <div>
-          <h2>Diane Barbat</h2>
-          <p class="role">Service designer et UX/UI designer, spécialisée en IA</p>
-          <p class="txt">Depuis plusieurs années, j'aide des entreprises à concevoir des services plus simples, en partant de ceux qui les utilisent. J'applique aujourd'hui cette méthode à l'IA, pour que les TPE et PME en profitent sans se perdre dans la technique.</p>
-        </div>
+      <div class="sec-head center">
+        <p class="eyebrow">L'équipe</p>
+        <h2 class="sec-title">Deux regards complémentaires.</h2>
+        <p class="sec-lead">Le design pour comprendre vos besoins, l'ingénierie pour rendre vos process plus efficaces.</p>
+      </div>
+      <div class="team">
+        <article class="person">
+          <div class="monogram" aria-hidden="true">DB</div>
+          <h3>Diane Barbat</h3>
+          <p class="role">Fondatrice de Diba.design.ia · Service designer et UX/UI designer, spécialisée en IA</p>
+          <p class="txt">Depuis plusieurs années, Diane aide des entreprises à concevoir des services plus simples, en partant de ceux qui les utilisent. Elle mène les entretiens, anime les ateliers et conçoit des outils IA que vos équipes ont vraiment envie d'utiliser.</p>
+        </article>
+        <article class="person">
+          <div class="monogram alt" aria-hidden="true">AR</div>
+          <h3>Arthur Raquin</h3>
+          <p class="role">Ingénieur en performance industrielle · Lean management, Lean Six Sigma, Lean manufacturing</p>
+          <p class="txt">Arthur sait repérer ce qui ralentit une organisation : étapes inutiles, attentes, doublons, erreurs qui se répètent. Formé aux méthodes Lean, il simplifie les process avant de les outiller et mesure les gains obtenus. Avec lui, chaque outil IA s'appuie sur une organisation claire et produit un résultat concret.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -449,14 +468,14 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
 
   <section class="wrap ex-cta">
     <h2>Votre situation n'est pas dans la liste ?</h2>
-    <p>C'est normal : chaque entreprise est différente. Parlons de la vôtre.</p>
-    <a class="btn btn-primary" href="#contact">Me contacter</a>
+    <p class="punchline">C'est normal : chaque entreprise est unique. <span>Parlons de la vôtre.</span></p>
+    <a class="btn btn-primary" href="#contact">Nous contacter</a>
   </section>
 </main>
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <span>Diba.design.ia · Diane Barbat</span>
+    <span>Diba.design.ia · Diane Barbat et Arthur Raquin</span>
     <span>diane.barbat.pro@gmail.com</span>
   </div>
 </footer>
@@ -471,29 +490,31 @@ const CASES = [
     before:"Chacun a son Excel, les doublons sont partout et personne ne sait qui a déjà appelé qui.",
     after:"L'agent rassemble les fichiers, supprime les doublons, qualifie les prospects et prépare le premier message. Le lundi, la liste est prête.",
     more:"Il peut aussi créer un fichier Excel partagé ou un site accessible à tout moment, sur ordinateur ou sur téléphone. Chaque commercial y retrouve ses tâches et sa sélection de clients à voir. Après chaque visite, il note son retour en direct : rendez-vous fait, visite reportée, client déjà équipé chez un concurrent… Toute l'équipe voit où en est chaque client. L'outil peut aussi intégrer un module de rédaction rapide des devis.",
-    gain:"7 h" },
+    gain:"7 h", demo:{ label:"Voir", url:"" } },
   { trade:"Plombier à son compte", title:"Il ne peut pas décrocher quand il est sous un évier.",
     before:"Les appels tombent en pleine intervention. Le soir, il rappelle, cale les rendez-vous et oublie des devis.",
     after:"L'agent répond à chaque appel, repère les urgences, cale le rendez-vous dans son agenda et lui envoie un résumé par SMS.",
-    gain:"4 h" },
+    gain:"4 h", demo:{ label:"Essayer", url:"" } },
   { trade:"Artisan menuisier", title:"Il passe ses soirées à taper ses devis.",
     before:"Mesures notées sur un carnet, tarifs à retrouver, devis rédigé le soir. Le client attend une semaine.",
     after:"Il donne simplement les éléments du chantier : mesures, matériaux, options. L'agent crée le devis automatiquement à partir de sa trame habituelle, avec ses prix. Il peut même dicter ses mesures en sortant du chantier : le devis est prêt à relire avant le suivant.",
-    gain:"4 h" },
+    gain:"4 h", demo:{ label:"Essayer", url:"" } },
   { trade:"Chargée de communication", title:"Elle gère les réseaux sociaux en plus de son poste.",
     before:"Une idée de publication le lundi, en ligne le jeudi si tout va bien. Le reste de son poste attend.",
     after:"L'agent prépare un mois de publications dans le ton de la marque et les décline pour chaque réseau. Elle choisit, ajuste et programme.",
-    gain:"3 h" },
+    gain:"3 h", demo:{ label:"Voir", url:"" } },
   { trade:"Boutique de carrelage", title:"Ses clients n'arrivent pas à se projeter.",
     before:"Les clients hésitent, reviennent deux fois avec leurs échantillons. Les vendeurs calculent les surfaces à la main.",
     after:"Le client envoie une photo de sa pièce et voit le carrelage posé, avec les quantités. Dès qu'il valide le rendu, le devis est généré automatiquement. Le vendeur reprend la main pour conclure.",
-    gain:"5 h" }
+    gain:"5 h", demo:{ label:"Essayer", url:"" } }
 ];
 $("#cases").innerHTML = CASES.map(c => `
   <article class="case">
     <div class="before"><p class="trade">${esc(c.trade)}</p><h3>${esc(c.title)}</h3><p>${esc(c.before)}</p></div>
     <div class="after"><p class="lbl">Avec son agent</p><p>${esc(c.after)}</p>${c.more ? `<p class="more">${esc(c.more)}</p>` : ""}</div>
-    <div class="gain"><span class="k">Temps rendu</span><span class="v">≈ ${esc(c.gain)}</span><span class="s">par semaine</span></div>
+    <div class="side"><div class="gain"><span class="k">Temps rendu</span><span class="v">≈ ${esc(c.gain)}</span><span class="s">par semaine</span></div>${c.demo ? (c.demo.url
+      ? `<a class="btn btn-primary demo" href="${esc(c.demo.url)}" target="_blank" rel="noopener">${esc(c.demo.label)}</a>`
+      : `<span class="btn demo soon" aria-disabled="true">${esc(c.demo.label)} · bientôt</span>`) : ""}</div>
   </article>`).join("");
 
 /* ---------- onglets : Accueil / Exemples ---------- */
@@ -533,13 +554,13 @@ $("#contactForm").addEventListener("submit", e => {
   if (!v("c-nom")) errs["c-nom"] = "Indiquez votre nom.";
   if (!v("c-ent")) errs["c-ent"] = "Indiquez le nom de votre entreprise.";
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v("c-mail"))) errs["c-mail"] = "Vérifiez l'adresse : elle doit ressembler à nom@entreprise.fr.";
-  if (!v("c-msg")) errs["c-msg"] = "Dites-moi en une phrase ce qui vous prend du temps.";
+  if (!v("c-msg")) errs["c-msg"] = "Dites-nous en une phrase ce qui vous prend du temps.";
   document.querySelectorAll("[data-err]").forEach(m => { const t = errs[m.dataset.err]; m.hidden = !t; m.textContent = t || ""; });
   Object.keys(errs).forEach(id => $("#" + id).classList.add("err"));
   const first = Object.keys(errs)[0];
   if (first){ $("#" + first).focus(); return; }
   const body = [
-    "Bonjour Diane,", "", v("c-msg"), "",
+    "Bonjour,", "", v("c-msg"), "",
     v("c-nom") + " · " + v("c-ent"),
     v("c-mail") + (v("c-tel") ? " · " + v("c-tel") : "")
   ].join("\n");
@@ -547,7 +568,7 @@ $("#contactForm").addEventListener("submit", e => {
   window.location.href = "mailto:diane.barbat.pro@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   const box = $("#sentBox");
   box.hidden = false;
-  box.innerHTML = `<div class="sent">Votre messagerie devrait s'ouvrir avec votre message. Pensez à cliquer sur Envoyer. Si rien ne s'ouvre, copiez l'adresse ci-dessous et écrivez-moi directement.</div>`;
+  box.innerHTML = `<div class="sent">Votre messagerie devrait s'ouvrir avec votre message. Pensez à cliquer sur Envoyer. Si rien ne s'ouvre, copiez l'adresse ci-dessous et écrivez-nous directement.</div>`;
 });
 </script>
 
