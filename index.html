@@ -406,7 +406,7 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
         <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
         <p class="form-note">Le bouton ouvre votre messagerie avec le message déjà rédigé : il vous reste à cliquer sur Envoyer.</p>
         <div id="sentBox" hidden></div>
-        <div class="addr">Ou écrivez-nous directement : <code>diane.barbat.pro@gmail.com</code> <button class="btn btn-quiet btn-sm" type="button" data-copy="diane.barbat.pro@gmail.com">Copier</button></div>
+        <div class="addr">Ou écrivez-nous directement : <code>diba.design.ia@gmail.com</code> <button class="btn btn-quiet btn-sm" type="button" data-copy="diba.design.ia@gmail.com">Copier</button></div>
       </form>
     </div>
   </section>
@@ -476,7 +476,7 @@ textarea.inp{min-height:130px; resize:vertical; line-height:1.5}
 <footer class="foot">
   <div class="wrap foot-in">
     <span>Diba.design.ia · Diane Barbat et Arthur Raquin</span>
-    <span>diane.barbat.pro@gmail.com</span>
+    <span>diba.design.ia@gmail.com</span>
   </div>
 </footer>
 
@@ -565,7 +565,7 @@ $("#contactForm").addEventListener("submit", e => {
     v("c-mail") + (v("c-tel") ? " · " + v("c-tel") : "")
   ].join("\n");
   const subject = "Demande de contact · " + v("c-ent");
-  window.location.href = "mailto:diane.barbat.pro@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  window.location.href = "mailto:diba.design.ia@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   const box = $("#sentBox");
   box.hidden = false;
   box.innerHTML = `<div class="sent">Votre messagerie devrait s'ouvrir avec votre message. Pensez à cliquer sur Envoyer. Si rien ne s'ouvre, copiez l'adresse ci-dessous et écrivez-nous directement.</div>`;
